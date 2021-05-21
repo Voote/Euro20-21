@@ -1,10 +1,14 @@
 import './assets/styles.scss';
+import Fixtures from './components/fixtures';
 
 const App = () => (
   <div className="App">
-    <header style={{ marginTop: '20vh' }}>
+    <header>
       <h1>Euro 20/21 fixtures</h1>
     </header>
+    <section>
+      <Fixtures />
+    </section>
   </div>
 );
 

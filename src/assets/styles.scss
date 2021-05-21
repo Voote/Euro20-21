@@ -1,3 +1,7 @@
+$primary: #00b4c1;
+$secondary: #ff4b3e;
+$font: #dbeaf1;
+
 html,
 body {
   font-family: 'Teko', sans-serif;
@@ -16,4 +20,7 @@ a {
 
 .App {
   text-align: center;
+  header {
+    margin-top: 10vh;
+  }
 }
