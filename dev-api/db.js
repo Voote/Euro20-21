@@ -1,17 +1,11 @@
-const db = require('./db');
-const jsonServer = require('json-server');
+const fixtures = require('./data/fixtures');
+const groups = require('./data/groups');
+const teams = require('./data/teams');
+const tree = require('./data/tree');
 
-const server = jsonServer.create();
-const router = jsonServer.router(db);
-const middlewares = jsonServer.defaults();
-
-// middlewares
-server.use(middlewares);
-server.use(jsonServer.bodyParser);
-
-// generic routes
-server.use(router);
-
-server.listen(3000, () => {
-  console.log('dev API is HAPPY!');
-});
+module.exports = {
+  fixtures,
+  groups,
+  teams,
+  tree
+};
