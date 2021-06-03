@@ -22,5 +22,12 @@ module.exports = {
   Slovakia: 'Slovakia',
   Turkey: 'Turkey',
   Ukraine: 'Ukraine',
-  Wales: 'Wales'
+  Wales: 'Wales',
+  Monday: 'Monday',
+  Tuesday: 'Tuesday',
+  Wednesday: 'Wednesday',
+  Thursday: 'Thursday',
+  Friday: 'Friday',
+  Saturday: 'Saturday',
+  Sunday: 'Sunday'
 };
