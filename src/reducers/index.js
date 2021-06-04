@@ -1,7 +1,11 @@
-import { combineReducer } from 'redux';
+import { combineReducers } from 'redux';
 
 import fixtures from './fixtrues';
+import teams from './teams';
 
-export default combineReducer({
-  fixtures
+const rootReducer = combineReducers({
+  fixtures,
+  teams
 });
+
+export default rootReducer;
