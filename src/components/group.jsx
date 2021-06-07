@@ -6,8 +6,6 @@ import Card from 'react-bootstrap/Card';
 import { statusType } from '../constants';
 import { getFixtures, getTeams } from '../actions';
 
-import maches from './test';
-
 const Group = ({
   getFixtures,
   getTeams,
@@ -32,27 +30,23 @@ const Group = ({
 
   return (
     <div>
-      <div>
-        {fixtures.map((match) => {
-          const bgColor = match.date % 2 ? 'info' : 'warning';
-          return (
-            <div key={match.id}>
-              <Card bg={bgColor} text="dark" className="card__group">
-                <Card.Header>{match.date}th June</Card.Header>
-                <Card.Body>
-                  <Card.Title>
-                    {match.team1} ({match.score1}) vs ({match.score2}){' '}
-                    {match.team2}
-                  </Card.Title>
-                  <Card.Text>
-                    {match.city} {match.time}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
-          );
-        })}
-        {/* <div>
+      {fixtures.map((match) => {
+        const bgColor = match.date % 2 ? 'info' : 'warning';
+        return (
+          <Card key={match.id} bg={bgColor} text="dark" className="card__group">
+            <Card.Header>{match.date}th June</Card.Header>
+            <Card.Body>
+              <Card.Title>
+                {match.team1} ({match.score1}) vs ({match.score2}) {match.team2}
+              </Card.Title>
+              <Card.Text>
+                {match.city} {match.time}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        );
+      })}
+      {/* <div>
           <Card bg="light" text="dark" className="card__group">
             <Card.Header>Header</Card.Header>
             <Card.Body>
@@ -76,7 +70,6 @@ const Group = ({
             </Card.Body>
           </Card>
         </div> */}
-      </div>
     </div>
   );
 };
