@@ -6,24 +6,7 @@ import Card from 'react-bootstrap/Card';
 import { statusType } from '../constants';
 import { getFixtures, getTeams } from '../actions';
 
-const bazaTestowa = [
-  {
-    id: 0,
-    name: 'item1'
-  },
-  {
-    id: 1,
-    name: 'item2'
-  },
-  {
-    id: 2,
-    name: 'item3'
-  },
-  {
-    id: 3,
-    name: 'item4'
-  }
-];
+import maches from './test';
 
 const Group = ({
   getFixtures,
@@ -50,36 +33,26 @@ const Group = ({
   return (
     <div>
       <div>
-        {fixtures.map((druzyna) => (
-          <div key={druzyna.id}>
-            <Card bg="warning" text="dark" className="card__group">
-              <Card.Header>
-                {druzyna.team1} vs {druzyna.team2}
-              </Card.Header>
-              <Card.Body>
-                <Card.Title>{druzyna.name}</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-        ))}
-        {/*     
-        <div>
-          <Card bg="info" text="dark" className="card__group">
-            <Card.Header>Header</Card.Header>
-            <Card.Body>
-              <Card.Title>Card Title </Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </div>
-        <div>
+        {fixtures.map((match) => {
+          const bgColor = match.date % 2 ? 'info' : 'warning';
+          return (
+            <div key={match.id}>
+              <Card bg={bgColor} text="dark" className="card__group">
+                <Card.Header>{match.date}th June</Card.Header>
+                <Card.Body>
+                  <Card.Title>
+                    {match.team1} ({match.score1}) vs ({match.score2}){' '}
+                    {match.team2}
+                  </Card.Title>
+                  <Card.Text>
+                    {match.city} {match.time}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </div>
+          );
+        })}
+        {/* <div>
           <Card bg="light" text="dark" className="card__group">
             <Card.Header>Header</Card.Header>
             <Card.Body>
