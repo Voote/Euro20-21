@@ -29,5 +29,20 @@ module.exports = {
   Thursday: 'Thursday',
   Friday: 'Friday',
   Saturday: 'Saturday',
-  Sunday: 'Sunday'
+  Sunday: 'Sunday',
+  time15: '15:00',
+  time18: '18:00',
+  time21: '21:00',
+  Amsterdam: 'Amsterdam', 
+  Baku: 'Baku', 
+  Seville: 'Seville', 
+  Bucharest: 'Bucharest', 
+  Budapest: 'Budapest', 
+  Copenhagen: 'Copenhagen', 
+  Dublin: 'Dublin', 
+  Glasgow: 'Glasgow', 
+  London: 'London', 
+  Munich: 'Munich', 
+  Rome: 'Rome', 
+  Petersburg: 'St Petersburg'
 };
