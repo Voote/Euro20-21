@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import { statusType } from '../constants';
 import { getFixtures, getTeams } from '../actions';
+let previousDate = 0;
 
 const Group = ({
   getFixtures,
@@ -31,10 +32,12 @@ const Group = ({
   return (
     <div>
       {fixtures.map((match) => {
+        const dateHeader = previousDate == match.date ? '' : <Card.Header>{match.date}th June</Card.Header>;
+        previousDate = match.date;
         const bgColor = match.date % 2 ? 'info' : 'warning';
         return (
           <Card key={match.id} bg={bgColor} text="dark" className="card__group">
-            <Card.Header>{match.date}th June</Card.Header>
+            {dateHeader}
             <Card.Body>
               <Card.Title>
                 {match.team1} ({match.score1}) vs ({match.score2}) {match.team2}
