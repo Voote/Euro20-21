@@ -153,32 +153,32 @@ module.exports = [
     team2: labels.Belgium,
     group: 'B',
     day: labels.Thursday
-  },
-  {
-    id: 10,
-    name: 'match 10',
-    result: 3,
-    team1: 0,
-    team2: 0,
-    group: 'A',
-    day: labels.Monday
-  },
-  {
-    id: 10,
-    name: 'match 10',
-    result: 3,
-    team1: 0,
-    team2: 0,
-    group: 'A',
-    day: labels.Monday
-  },
-  {
-    id: 10,
-    name: 'match 10',
-    result: 3,
-    team1: 0,
-    team2: 0,
-    group: 'A',
-    day: labels.Monday
   }
+  // {
+  //   id: 10,
+  //   name: 'match 10',
+  //   result: 3,
+  //   team1: 0,
+  //   team2: 0,
+  //   group: 'A',
+  //   day: labels.Monday
+  // },
+  // {
+  //   id: 10,
+  //   name: 'match 10',
+  //   result: 3,
+  //   team1: 0,
+  //   team2: 0,
+  //   group: 'A',
+  //   day: labels.Monday
+  // },
+  // {
+  //   id: 10,
+  //   name: 'match 10',
+  //   result: 3,
+  //   team1: 0,
+  //   team2: 0,
+  //   group: 'A',
+  //   day: labels.Monday
+  // }
 ];

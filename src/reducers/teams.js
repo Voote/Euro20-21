@@ -1,12 +1,12 @@
 import {
   GET_TEAMS,
-  GET_TEAMS_SUCCESS,
-  GET_TEAMS_ERROR
+  GET_TEAMS_ERROR,
+  GET_TEAMS_SUCCESS
 } from '../actions/actionTypes';
 import { statusType } from '../constants';
 
 const initialState = {
-  data: 0,
+  data: [],
   status: ''
 };
 
@@ -19,18 +19,18 @@ const teams = (state = initialState, action) => {
         status: statusType.loading
       };
     }
-    case GET_TEAMS_SUCCESS: {
-      return {
-        ...state,
-        data: action.payload,
-        status: statusType.success
-      };
-    }
     case GET_TEAMS_ERROR: {
       return {
         ...state,
         data: [],
         status: statusType.error
+      };
+    }
+    case GET_TEAMS_SUCCESS: {
+      return {
+        ...state,
+        data: action.payload,
+        status: statusType.success
       };
     }
     default:
