@@ -1,4 +1,4 @@
-const labels = require('../../src/assets/labels');
+const labels = require('../assets/labels');
 
 module.exports = [
   {
