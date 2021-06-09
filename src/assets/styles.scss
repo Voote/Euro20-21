@@ -22,7 +22,6 @@ body {
 }
 
 .bg-warning {
-  color: $antySunny;
   background-color: $sunny !important;
 }
 
@@ -51,11 +50,18 @@ a {
 }
 
 .card {
+  border: none;
   &__group {
     width: 90vw;
     margin: 0rem 5vw -2.7rem 5vw;
     border-radius: 50px 50px 0px 0px;
-    // margin-top: -1rem;
     padding-bottom: 2rem;
+  }
+
+  &__border {
+    margin: auto 1em;
+    border-radius: 50%;
+    border-top: 0.2em double $purple;
+    text-align: center;
   }
 }

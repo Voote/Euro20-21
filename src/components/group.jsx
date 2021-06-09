@@ -5,7 +5,17 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import { statusType } from '../constants';
 import { getFixtures, getTeams } from '../actions';
-let previousDate = 0;
+
+const colorSwitch = (param) => {
+  switch (param) {
+    case 1:
+      return 'dark';
+    case 2:
+      return 'info';
+    default:
+      return 'warning';
+  }
+};
 
 const Group = ({
   getFixtures,
@@ -21,20 +31,22 @@ const Group = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  //   const row2 = teams
-  //     .reduce(function (accumulator, currentValue, currentIndex, array) {
-  //       if (currentIndex % 2 === 0)
-  //         accumulator.push(array.slice(currentIndex, currentIndex + 2));
-  //       return accumulator;
-  //     }, [])
-  //     .map((p) => console.log(p[0], p[1]));
+  let previousDate;
 
   return (
     <div>
       {fixtures.map((match) => {
-        const dateHeader = previousDate == match.date ? '' : <Card.Header>{match.date}th June</Card.Header>;
+        const dayJune = 'th June';
+        const cardHeader = (
+          <Card.Header>
+            {match.date}
+            {dayJune}
+          </Card.Header>
+        );
+        const bgColor = colorSwitch(match.date % 3);
+        const dateHeader = previousDate !== match.date && cardHeader;
         previousDate = match.date;
-        const bgColor = match.date % 2 ? 'info' : 'warning';
+
         return (
           <Card key={match.id} bg={bgColor} text="dark" className="card__group">
             {dateHeader}
@@ -45,34 +57,11 @@ const Group = ({
               <Card.Text>
                 {match.city} {match.time}
               </Card.Text>
+              <div className="card__border" />
             </Card.Body>
           </Card>
         );
       })}
-      {/* <div>
-          <Card bg="light" text="dark" className="card__group">
-            <Card.Header>Header</Card.Header>
-            <Card.Body>
-              <Card.Title>Card Title </Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </div>
-        <div>
-          <Card bg="dark" text="dark" className="card__group">
-            <Card.Header>Header</Card.Header>
-            <Card.Body>
-              <Card.Title>Card Title </Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </div> */}
     </div>
   );
 };
