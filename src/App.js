@@ -1,6 +1,5 @@
 import './assets/styles.scss';
 import Fixtures from './components/fixtures';
-import Group from './components/group';
 
 const App = () => (
   <div className="App">
@@ -9,9 +8,6 @@ const App = () => (
     </header>
     <section>
       <Fixtures />
-    </section>
-    <section>
-      <Group />
     </section>
   </div>
 );
