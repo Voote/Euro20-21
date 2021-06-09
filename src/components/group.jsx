@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Card from 'react-bootstrap/Card';
 import { statusType } from '../constants';
-import { getFixtures, getTeams } from '../actions';
+import { getFixtures } from '../actions';
 
 const colorSwitch = (param) => {
   switch (param) {
@@ -17,17 +17,9 @@ const colorSwitch = (param) => {
   }
 };
 
-const Group = ({
-  getFixtures,
-  getTeams,
-  fixtures,
-  teams,
-  isFixturesLoading,
-  isTeamsLoading
-}) => {
+const Group = ({ getFixtures, fixtures }) => {
   React.useEffect(() => {
     getFixtures();
-    getTeams();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -68,30 +60,22 @@ const Group = ({
 
 const mapStateToProps = (state) => ({
   fixtures: state.fixtures.data,
-  teams: state.teams.data,
-  isFixturesLoading: state.fixtures.status === statusType.loading,
-  isTeamsLoading: state.teams.status === statusType.loading
+  isFixturesLoading: state.fixtures.status === statusType.loading
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getFixtures: () => dispatch(getFixtures()),
-  getTeams: () => dispatch(getTeams())
+  getFixtures: () => dispatch(getFixtures())
 });
 
 Group.defaultProps = {
   fixtures: [],
-  teams: [],
-  isFixturesLoading: false,
-  isTeamsLoading: false
+  isFixturesLoading: false
 };
 
 Group.propTypes = {
   fixtures: PropTypes.array,
-  teams: PropTypes.array,
   isFixturesLoading: PropTypes.bool,
-  isTeamsLoading: PropTypes.bool,
-  getFixtures: PropTypes.func.isRequired,
-  getTeams: PropTypes.func.isRequired
+  getFixtures: PropTypes.func.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Group);
