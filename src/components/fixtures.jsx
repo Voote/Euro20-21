@@ -29,6 +29,7 @@ const Fixtures = ({ getFixtures, fixtures }) => {
     <div>
       {fixtures.map((match) => {
         const dayJune = 'th June';
+        const utc = ' (UTC)';
         const cardHeader = (
           <Card.Header>
             {match.date}
@@ -54,6 +55,7 @@ const Fixtures = ({ getFixtures, fixtures }) => {
               </Card.Title>
               <Card.Text>
                 {match.city} {match.time}
+                {utc}
               </Card.Text>
               <div className="card__border" />
             </Card.Body>
