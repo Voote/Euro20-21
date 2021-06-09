@@ -33,6 +33,10 @@ body {
   color: $fontColor !important;
 }
 
+.col-2 {
+  padding: 0;
+}
+
 .card-header {
   background-color: rgba(0, 0, 0, 0);
 }
@@ -60,8 +64,8 @@ a {
 
   &__border {
     margin: auto 1em;
-    border-radius: 50%;
-    border-top: 0.2em double $purple;
+    border-radius: 70%;
+    border-bottom: 0.2em double $purple;
     text-align: center;
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Card from 'react-bootstrap/Card';
+import { Card, Col, Row } from 'react-bootstrap';
 import { statusType } from '../constants';
 import { getFixtures } from '../actions';
 
@@ -44,7 +44,13 @@ const Fixtures = ({ getFixtures, fixtures }) => {
             {dateHeader}
             <Card.Body>
               <Card.Title>
-                {match.team1} ({match.score1}) vs ({match.score2}) {match.team2}
+                <Row>
+                  <Col xs={5}>{match.team1}</Col>
+                  <Col xs={2}>
+                    {match.score1}:{match.score2}
+                  </Col>
+                  <Col xs={5}>{match.team2}</Col>
+                </Row>
               </Card.Title>
               <Card.Text>
                 {match.city} {match.time}
