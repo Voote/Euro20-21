@@ -7,10 +7,10 @@ import { statusType } from '../constants';
 import { getGroups } from '../actions/index';
 
 const positions = [
-  { id: 0, position: '1st' },
-  { id: 1, position: '2nd' },
-  { id: 2, position: '3rd' },
-  { id: 3, position: '4th' }
+  { id: 0, label: '1st' },
+  { id: 1, label: '2nd' },
+  { id: 2, label: '3rd' },
+  { id: 3, label: '4th' }
 ];
 
 const colorSwitch = (param) => {
@@ -33,6 +33,7 @@ const Groups = ({ getGroups, groups }) => {
   }, []);
   let previousGroup;
   let previousColor;
+  let num;
 
   return (
     <div>
@@ -40,6 +41,12 @@ const Groups = ({ getGroups, groups }) => {
       <div>
         {groups.map((team) => {
           let bgColor;
+          (previousGroup !== team.group && (num = 0)) ||
+            (num > 2 && (num = 0)) ||
+            (num = num + 1);
+          console.log(num, team.group, previousGroup);
+
+          const placeInGroup = positions[num].label;
           const cardGroup = <Card.Header>group {team.group}</Card.Header>;
           const isSameGroup = previousGroup !== team.group && cardGroup;
           const randomColor = colorSwitch(Math.floor(Math.random() * 4));
@@ -65,7 +72,7 @@ const Groups = ({ getGroups, groups }) => {
               {isSameGroup}
               <Card.Title>
                 <Row>
-                  <Col xs={3}>1st</Col>
+                  <Col xs={3}>{placeInGroup}</Col>
                   <Col xs={6}>{team.name}</Col>
                   <Col xs={3}>{team.points}</Col>
                 </Row>

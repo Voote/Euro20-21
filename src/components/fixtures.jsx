@@ -41,7 +41,7 @@ const Fixtures = ({ getFixtures, fixtures }) => {
         previousDate = match.date;
 
         return (
-          <Card key={match.id} bg={bgColor} text="dark" className="card__group">
+          <Card key={match.id} bg={bgColor} text="dark" className="card__match">
             {dateHeader}
             <Card.Body>
               <Card.Title>
