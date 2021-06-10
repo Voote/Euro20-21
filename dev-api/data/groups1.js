@@ -8,38 +8,38 @@ module.exports = [
       {
         id: 0,
         name: labels.Italy,
-        points: 7,
-        matches: 3,
-        round1: 3,
-        round2: 3,
-        round3: 1
+        points: 0,
+        matches: 0,
+        round1: 0,
+        round2: 0,
+        round3: 0
       },
       {
         id: 1,
         name: labels.Switzerland,
-        points: 2,
-        matches: 3,
+        points: 0,
+        matches: 0,
         round1: 0,
-        round2: 1,
-        round3: 1
+        round2: 0,
+        round3: 0
       },
       {
         id: 2,
         name: labels.Turkey,
-        points: 2,
-        matches: 3,
+        points: 0,
+        matches: 0,
         round1: 0,
-        round2: 1,
-        round3: 1
+        round2: 0,
+        round3: 0
       },
       {
         id: 3,
         name: labels.Wales,
-        points: 4,
-        matches: 3,
-        round1: 3,
+        points: 0,
+        matches: 0,
+        round1: 0,
         round2: 0,
-        round3: 1
+        round3: 0
       }
     ]
   },
@@ -50,37 +50,37 @@ module.exports = [
       {
         id: 0,
         name: labels.Belgium,
-        points: 7,
-        matches: 3,
-        round1: 1,
-        round2: 3,
-        round3: 3
+        points: 0,
+        matches: 0,
+        round1: 0,
+        round2: 0,
+        round3: 0
       },
       {
         id: 1,
         name: labels.Denmark,
-        points: 3,
-        matches: 3,
-        round1: 1,
-        round2: 1,
-        round3: 1
+        points: 0,
+        matches: 0,
+        round1: 0,
+        round2: 0,
+        round3: 0
       },
       {
         id: 2,
         name: labels.Finland,
-        points: 4,
-        matches: 3,
-        round1: 3,
+        points: 0,
+        matches: 0,
+        round1: 0,
         round2: 0,
-        round3: 1
+        round3: 0
       },
       {
         id: 3,
         name: labels.Russia,
-        points: 1,
-        matches: 3,
+        points: 0,
+        matches: 0,
         round1: 0,
-        round2: 1,
+        round2: 0,
         round3: 0
       }
     ]
@@ -92,19 +92,19 @@ module.exports = [
       {
         id: 0,
         name: labels.Austria,
-        points: 3,
-        matches: 2,
-        round1: 3,
+        points: 0,
+        matches: 0,
+        round1: 0,
         round2: 0,
         round3: 0
       },
       {
         id: 1,
         name: labels.Netherlands,
-        points: 4,
-        matches: 2,
-        round1: 3,
-        round2: 1,
+        points: 0,
+        matches: 0,
+        round1: 0,
+        round2: 0,
         round3: 0
       },
       {

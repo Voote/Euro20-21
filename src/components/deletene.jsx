@@ -27,12 +27,12 @@ const colorSwitch = (param) => {
 };
 
 const Groups = ({ getGroups, groups }) => {
+  let previousGroup;
+  let previousColor;
   React.useEffect(() => {
     getGroups();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  let previousGroup;
-  let previousColor;
 
   return (
     <div>

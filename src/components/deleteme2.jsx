@@ -7,10 +7,10 @@ import { statusType } from '../constants';
 import { getGroups } from '../actions/index';
 
 const positions = [
-  { id: 0, label: '1st' },
-  { id: 1, label: '2nd' },
-  { id: 2, label: '3rd' },
-  { id: 3, label: '4th' }
+  { id: 1, label: '1st' },
+  { id: 2, label: '2nd' },
+  { id: 3, label: '3rd' },
+  { id: 4, label: '4th' }
 ];
 
 const colorSwitch = (param) => {
@@ -41,10 +41,10 @@ const Groups = ({ getGroups, groups }) => {
       <div>
         {groups.map((team) => {
           let bgColor;
-          (previousGroup !== team.group && (num = 0)) ||
-            (num > 2 && (num = 0)) ||
-            (num = num + 1);
-          console.log(num, team.group, previousGroup);
+
+          previousGroup !== team.group
+            ? (num = 0)
+            : (num > 2 && (num = 0)) || (num = num + 1);
 
           const placeInGroup = positions[num].label;
           const cardGroup = <Card.Header>group {team.group}</Card.Header>;

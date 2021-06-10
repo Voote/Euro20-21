@@ -1,38 +1,29 @@
-import React from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { Card, Col, Row } from 'react-bootstrap';
 import { statusType } from '../constants';
 import { getGroups } from '../actions/index';
+import colorSwitch from './colorSwitch';
 
 const positions = [
-  { id: 0, position: '1st' },
-  { id: 1, position: '2nd' },
-  { id: 2, position: '3rd' },
-  { id: 3, position: '4th' }
+  { id: 1, label: '1st' },
+  { id: 2, label: '2nd' },
+  { id: 3, label: '3rd' },
+  { id: 4, label: '4th' }
 ];
 
-const colorSwitch = (param) => {
-  switch (param) {
-    case 1:
-      return 'warning';
-    case 2:
-      return 'dark';
-    case 3:
-      return 'light';
-    default:
-      return 'info';
-  }
-};
-
 const Groups = ({ getGroups, groups }) => {
-  React.useEffect(() => {
+  const getGroupArrayMemo = useMemo(() => {
     getGroups();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [getGroups]);
+
+  useEffect(() => getGroupArrayMemo, [getGroupArrayMemo]);
+
   let previousGroup;
   let previousColor;
+  let num = 0;
 
   return (
     <div>
@@ -40,8 +31,7 @@ const Groups = ({ getGroups, groups }) => {
       <div>
         {groups.map((team) => {
           let bgColor;
-          const cardGroup = <Card.Header>group {team.group}</Card.Header>;
-          const isSameGroup = previousGroup !== team.group && cardGroup;
+
           const randomColor = colorSwitch(Math.floor(Math.random() * 4));
           const randomColorById = colorSwitch(
             Math.floor(Math.random() * team.id) % 4
@@ -62,13 +52,20 @@ const Groups = ({ getGroups, groups }) => {
               text="dark"
               className="card__group"
             >
-              {isSameGroup}
+              <Card.Header>group {team.group}</Card.Header>
               <Card.Title>
-                <Row>
-                  <Col xs={3}>1st</Col>
-                  <Col xs={6}>{team.name}</Col>
-                  <Col xs={3}>{team.points}</Col>
-                </Row>
+                {team.teams.map((item) => {
+                  const placeInGroup = positions[num].label;
+                  num > 2 ? (num = 0) : (num += 1);
+
+                  return (
+                    <Row>
+                      <Col xs={3}>{placeInGroup}</Col>
+                      <Col xs={6}>{item.name}</Col>
+                      <Col xs={3}>{item.points}</Col>
+                    </Row>
+                  );
+                })}
               </Card.Title>
             </Card>
           );
