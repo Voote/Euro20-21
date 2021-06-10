@@ -32,7 +32,7 @@ const Fixtures = ({ getFixtures, fixtures }) => {
         const utc = ' (UTC)';
         const cardHeader = (
           <Card.Header>
-            {match.date}
+            {match.day} {match.date}
             {dayJune}
           </Card.Header>
         );
