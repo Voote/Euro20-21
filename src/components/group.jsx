@@ -32,10 +32,12 @@ const Groups = ({ getGroups, groups }) => {
         {groups.map((team) => {
           let bgColor;
 
+          const sortedArray = team.teams.sort((a, b) => b.points - a.points);
           const randomColor = colorSwitch(Math.floor(Math.random() * 4));
           const randomColorById = colorSwitch(
             Math.floor(Math.random() * team.id) % 4
           );
+          console.log(sortedArray);
 
           (previousGroup === team.group && (bgColor = previousColor)) ||
             ((bgColor =
@@ -54,12 +56,12 @@ const Groups = ({ getGroups, groups }) => {
             >
               <Card.Header>group {team.group}</Card.Header>
               <Card.Title>
-                {team.teams.map((item) => {
+                {sortedArray.map((item) => {
                   const placeInGroup = positions[num].label;
                   num > 2 ? (num = 0) : (num += 1);
 
                   return (
-                    <Row>
+                    <Row key={item.id}>
                       <Col xs={3}>{placeInGroup}</Col>
                       <Col xs={6}>{item.name}</Col>
                       <Col xs={3}>{item.points}</Col>
