@@ -3,6 +3,7 @@
 $primary: #00b4c1;
 $secondary: #ff4b3e;
 $fontColor: #dbeaf1;
+$fontDarkColor: #212529;
 $purple: #863970;
 $sunny: #ec9321;
 $bluish: #0f9cb1;
@@ -24,6 +25,9 @@ body {
 .bg-warning {
   background-color: $sunny !important;
 }
+.btn-warning {
+  background-color: $sunny !important;
+}
 
 .bg-info {
   background-color: $bluish !important;
@@ -31,6 +35,10 @@ body {
 
 .bg-dark {
   color: $fontColor !important;
+}
+
+.btn-info {
+  color: $fontDarkColor;
 }
 
 .col-2 {
@@ -83,5 +91,13 @@ a {
     margin: 0rem 5vw -2.7rem 5vw;
     border-radius: 50px 50px 0px 0px;
     padding-bottom: 2rem;
+  }
+}
+
+.navigation {
+  margin: 1rem;
+  .btn {
+    border: 1px solid black;
+    margin: auto 0.4em;
   }
 }
