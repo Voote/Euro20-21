@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -15,11 +15,15 @@ const positions = [
 ];
 
 const Groups = ({ getGroups, groups }) => {
-  const getGroupArrayMemo = useMemo(() => {
-    getGroups();
-  }, [getGroups]);
+  // const getGroupArrayMemo = useMemo(() => {
+  //   getGroups();
+  // }, [getGroups]);
+  // useEffect(() => getGroupArrayMemo, [getGroupArrayMemo]);
 
-  useEffect(() => getGroupArrayMemo, [getGroupArrayMemo]);
+  useEffect(() => {
+    getGroups();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   let previousGroup;
   let previousColor;
@@ -37,7 +41,6 @@ const Groups = ({ getGroups, groups }) => {
           const randomColorById = colorSwitch(
             Math.floor(Math.random() * team.id) % 4
           );
-          console.log(sortedArray);
 
           (previousGroup === team.group && (bgColor = previousColor)) ||
             ((bgColor =
@@ -54,21 +57,29 @@ const Groups = ({ getGroups, groups }) => {
               text="dark"
               className="card__group"
             >
-              <Card.Header>group {team.group}</Card.Header>
-              <Card.Title>
-                {sortedArray.map((item) => {
-                  const placeInGroup = positions[num].label;
-                  num > 2 ? (num = 0) : (num += 1);
+              <Card.Header>
+                <h4>
+                  <span className="card__group--header">GROUP </span>
+                  <strong>{team.group}</strong>
+                </h4>
+              </Card.Header>
+              <Card.Body>
+                <Card.Title>
+                  {sortedArray.map((item) => {
+                    const placeInGroup = positions[num].label;
+                    num > 2 ? (num = 0) : (num += 1);
 
-                  return (
-                    <Row key={item.id}>
-                      <Col xs={3}>{placeInGroup}</Col>
-                      <Col xs={6}>{item.name}</Col>
-                      <Col xs={3}>{item.points}</Col>
-                    </Row>
-                  );
-                })}
-              </Card.Title>
+                    return (
+                      <Row key={item.id}>
+                        <Col xs={2}>{placeInGroup}</Col>
+                        <Col xs={8}>{item.name}</Col>
+                        <Col xs={2}>{item.points}</Col>
+                      </Row>
+                    );
+                  })}
+                </Card.Title>
+                <div className="card__border card__border--group" />
+              </Card.Body>
             </Card>
           );
         })}
