@@ -15,11 +15,6 @@ const positions = [
 ];
 
 const Groups = ({ getGroups, groups }) => {
-  // const getGroupArrayMemo = useMemo(() => {
-  //   getGroups();
-  // }, [getGroups]);
-  // useEffect(() => getGroupArrayMemo, [getGroupArrayMemo]);
-
   useEffect(() => {
     getGroups();
     // eslint-disable-next-line react-hooks/exhaustive-deps

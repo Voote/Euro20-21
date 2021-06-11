@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -18,7 +18,7 @@ const colorSwitch = (param) => {
 };
 
 const Fixtures = ({ getFixtures, fixtures }) => {
-  React.useEffect(() => {
+  useEffect(() => {
     getFixtures();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
