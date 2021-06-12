@@ -9,10 +9,16 @@ module.exports = [
         id: 0,
         name: labels.Italy,
         points: 0,
-        matches: 0,
-        round1: 0,
+        matches: 1,
+        round1: 3,
+        goals1scored: 3,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 1,
@@ -20,17 +26,29 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 2,
         name: labels.Turkey,
         points: 0,
-        matches: 0,
+        matches: 1,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 3,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 3,
@@ -38,8 +56,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       }
     ]
   },
@@ -53,8 +77,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 1,
@@ -62,8 +92,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 2,
@@ -71,8 +107,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 3,
@@ -80,8 +122,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       }
     ]
   },
@@ -95,8 +143,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 1,
@@ -104,8 +158,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 2,
@@ -113,8 +173,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 3,
@@ -122,8 +188,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       }
     ]
   },
@@ -137,8 +209,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 1,
@@ -146,8 +224,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 2,
@@ -155,8 +239,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 3,
@@ -164,8 +254,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       }
     ]
   },
@@ -179,8 +275,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 1,
@@ -188,8 +290,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 2,
@@ -197,8 +305,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 3,
@@ -206,8 +320,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       }
     ]
   },
@@ -221,8 +341,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 1,
@@ -230,8 +356,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 2,
@@ -239,8 +371,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       },
       {
         id: 3,
@@ -248,8 +386,14 @@ module.exports = [
         points: 0,
         matches: 0,
         round1: 0,
+        goals1scored: 0,
+        goals1lost: 0,
         round2: 0,
-        round3: 0
+        goals2scored: 0,
+        goals2lost: 0,
+        round3: 0,
+        goals3scored: 0,
+        goals3lost: 0
       }
     ]
   }

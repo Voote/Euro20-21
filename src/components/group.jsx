@@ -27,7 +27,7 @@ const Groups = ({ getGroups, groups }) => {
   return (
     <div>
       <div>Group View</div>
-      <div>
+      <div className="frame">
         {groups.map((team) => {
           let bgColor;
 

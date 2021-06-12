@@ -7,9 +7,9 @@ module.exports = [
     time: labels.time21,
     day: labels.Friday,
     team1: labels.Turkey,
-    score1: '-',
+    score1: 3,
     team2: labels.Italy,
-    score2: '-',
+    score2: 0,
     city: labels.Rome
   },
   {
