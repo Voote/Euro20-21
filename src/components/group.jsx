@@ -1,81 +1,97 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Card from 'react-bootstrap/Card';
+import { Card, Col, Row } from 'react-bootstrap';
 import { statusType } from '../constants';
-import { getFixtures } from '../actions';
+import { getGroups } from '../actions/index';
+import colorSwitch from './colorSwitch';
 
-const colorSwitch = (param) => {
-  switch (param) {
-    case 1:
-      return 'dark';
-    case 2:
-      return 'info';
-    default:
-      return 'warning';
-  }
-};
+const positions = [
+  { id: 1, label: '1st' },
+  { id: 2, label: '2nd' },
+  { id: 3, label: '3rd' },
+  { id: 4, label: '4th' }
+];
+const pointsSum = (item) => item.round1+item.round2+item.round3;
 
-const Group = ({ getFixtures, fixtures }) => {
-  React.useEffect(() => {
-    getFixtures();
+const Groups = ({ getGroups, groups }) => {
+  useEffect(() => {
+    getGroups();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  let previousDate;
+  let num = 0;
+  let colorCounter = 0;
 
   return (
     <div>
-      {fixtures.map((match) => {
-        const dayJune = 'th June';
-        const cardHeader = (
-          <Card.Header>
-            {match.date}
-            {dayJune}
-          </Card.Header>
-        );
-        const bgColor = colorSwitch(match.date % 3);
-        const dateHeader = previousDate !== match.date && cardHeader;
-        previousDate = match.date;
+      <div>Group View</div>
+      <div>
+        {groups.map((team) => {
+          const bgColor = colorSwitch[colorCounter];
+          colorCounter ++;
+          (colorCounter >= colorSwitch.length) && (colorCounter = 0);
 
-        return (
-          <Card key={match.id} bg={bgColor} text="dark" className="card__group">
-            {dateHeader}
-            <Card.Body>
-              <Card.Title>
-                {match.team1} ({match.score1}) vs ({match.score2}) {match.team2}
-              </Card.Title>
-              <Card.Text>
-                {match.city} {match.time}
-              </Card.Text>
-              <div className="card__border" />
-            </Card.Body>
-          </Card>
-        );
-      })}
+          const sortedArray = team.teams.sort((a, b) => pointsSum(b) - pointsSum(a));
+
+          return (
+            <Card
+              key={team.id}
+              bg={bgColor}
+              text="dark"
+              className="card__group"
+            >
+              <Card.Header>
+                <h4>
+                  <span className="card__group--header">GROUP </span>
+                  <strong>{team.group}</strong>
+                </h4>
+              </Card.Header>
+              <Card.Body>
+                <Card.Title>
+                  {sortedArray.map((item) => {
+                    
+                    const placeInGroup = positions[num].label;
+                    num > 2 ? (num = 0) : (num += 1);
+
+                    return (
+                      <Row key={item.id}>
+                        <Col xs={2}>{placeInGroup}</Col>
+                        <Col xs={8}>{item.name}</Col>
+                        <Col xs={2}>{pointsSum(item)}</Col>
+                      </Row>
+                    );
+                  })}
+                </Card.Title>
+                <div className="card__border card__border--group" />
+              </Card.Body>
+            </Card>
+          );
+        })}
+      </div>
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
-  fixtures: state.fixtures.data,
-  isFixturesLoading: state.fixtures.status === statusType.loading
+  groups: state.groups.data,
+  isGroupsLoading: state.groups.status === statusType.loading
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getFixtures: () => dispatch(getFixtures())
+  getGroups: () => dispatch(getGroups())
 });
 
-Group.defaultProps = {
-  fixtures: [],
-  isFixturesLoading: false
+Groups.defaultProps = {
+  groups: [],
+  isGroupsLoading: false
 };
 
-Group.propTypes = {
-  fixtures: PropTypes.array,
-  isFixturesLoading: PropTypes.bool,
-  getFixtures: PropTypes.func.isRequired
+Groups.propTypes = {
+  groups: PropTypes.array,
+  isGroupsLoading: PropTypes.bool,
+  getGroups: PropTypes.func.isRequired
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Group);
+export default connect(mapStateToProps, mapDispatchToProps)(Groups);

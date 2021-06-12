@@ -29,9 +29,10 @@ const Fixtures = ({ getFixtures, fixtures }) => {
     <div>
       {fixtures.map((match) => {
         const dayJune = 'th June';
+        const utc = ' (UTC)';
         const cardHeader = (
           <Card.Header>
-            {match.date}
+            {match.day} {match.date}
             {dayJune}
           </Card.Header>
         );
@@ -40,7 +41,7 @@ const Fixtures = ({ getFixtures, fixtures }) => {
         previousDate = match.date;
 
         return (
-          <Card key={match.id} bg={bgColor} text="dark" className="card__group">
+          <Card key={match.id} bg={bgColor} text="dark" className="card__match">
             {dateHeader}
             <Card.Body>
               <Card.Title>
@@ -54,6 +55,7 @@ const Fixtures = ({ getFixtures, fixtures }) => {
               </Card.Title>
               <Card.Text>
                 {match.city} {match.time}
+                {utc}
               </Card.Text>
               <div className="card__border" />
             </Card.Body>
