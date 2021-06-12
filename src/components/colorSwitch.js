@@ -1,5 +1,7 @@
 const colorSwitch = (param) => {
   switch (param) {
+    case 0:
+      return 'info';
     case 1:
       return 'warning';
     case 2:

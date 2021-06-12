@@ -15,40 +15,24 @@ const positions = [
 ];
 
 const Groups = ({ getGroups, groups }) => {
-  // const getGroupArrayMemo = useMemo(() => {
-  //   getGroups();
-  // }, [getGroups]);
-  // useEffect(() => getGroupArrayMemo, [getGroupArrayMemo]);
-
   useEffect(() => {
     getGroups();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  let previousGroup;
-  let previousColor;
   let num = 0;
+  let colorCounter = 0;
 
   return (
     <div>
       <div>Group View</div>
       <div>
         {groups.map((team) => {
-          let bgColor;
+          const bgColor = colorSwitch(colorCounter);
+          colorCounter = colorCounter +1;
+          if (colorCounter >= 4) colorCounter = 0;
 
-          const sortedArray = team.teams.sort((a, b) => b.points - a.points);
-          const randomColor = colorSwitch(Math.floor(Math.random() * 4));
-          const randomColorById = colorSwitch(
-            Math.floor(Math.random() * team.id) % 4
-          );
-
-          (previousGroup === team.group && (bgColor = previousColor)) ||
-            ((bgColor =
-              (previousColor !== randomColorById && randomColorById) ||
-              randomColor) &&
-              (previousColor = bgColor));
-
-          previousGroup = team.group;
+          const sortedArray = team.teams.sort((a, b) => (b.round1+b.round2+b.round3) - (a.round1+a.round2+a.round3));
 
           return (
             <Card
@@ -66,6 +50,7 @@ const Groups = ({ getGroups, groups }) => {
               <Card.Body>
                 <Card.Title>
                   {sortedArray.map((item) => {
+                    const pointsSum = item.round1+item.round2+item.round3;
                     const placeInGroup = positions[num].label;
                     num > 2 ? (num = 0) : (num += 1);
 
@@ -73,7 +58,7 @@ const Groups = ({ getGroups, groups }) => {
                       <Row key={item.id}>
                         <Col xs={2}>{placeInGroup}</Col>
                         <Col xs={8}>{item.name}</Col>
-                        <Col xs={2}>{item.points}</Col>
+                        <Col xs={2}>{pointsSum}</Col>
                       </Row>
                     );
                   })}
