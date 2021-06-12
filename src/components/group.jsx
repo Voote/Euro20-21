@@ -20,13 +20,15 @@ const Groups = ({ getGroups, groups }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const headerText = 'Group View';
+  const groupHeader = 'GROUP ';
   let previousGroup;
   let previousColor;
   let num = 0;
 
   return (
     <div>
-      <div>Group View</div>
+      <div>{headerText}</div>
       <div className="frame">
         {groups.map((team) => {
           let bgColor;
@@ -54,7 +56,7 @@ const Groups = ({ getGroups, groups }) => {
             >
               <Card.Header>
                 <h4>
-                  <span className="card__group--header">GROUP </span>
+                  <span className="card__group--header">{groupHeader}</span>
                   <strong>{team.group}</strong>
                 </h4>
               </Card.Header>
