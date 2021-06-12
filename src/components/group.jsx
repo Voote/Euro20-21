@@ -31,7 +31,7 @@ const Groups = ({ getGroups, groups }) => {
         {groups.map((team) => {
           const bgColor = colorSwitch[colorCounter];
           colorCounter ++;
-          if (colorCounter >= colorSwitch.length) colorCounter = 0;
+          (colorCounter >= colorSwitch.length) && (colorCounter = 0);
 
           const sortedArray = team.teams.sort((a, b) => pointsSum(b) - pointsSum(a));
 
