@@ -13,6 +13,7 @@ const positions = [
   { id: 3, label: '3rd' },
   { id: 4, label: '4th' }
 ];
+const pointsSum = (item) => item.round1+item.round2+item.round3;
 
 const Groups = ({ getGroups, groups }) => {
   useEffect(() => {
@@ -28,11 +29,11 @@ const Groups = ({ getGroups, groups }) => {
       <div>Group View</div>
       <div>
         {groups.map((team) => {
-          const bgColor = colorSwitch(colorCounter);
-          colorCounter = colorCounter +1;
-          if (colorCounter >= 4) colorCounter = 0;
+          const bgColor = colorSwitch[colorCounter];
+          colorCounter ++;
+          if (colorCounter >= colorSwitch.length) colorCounter = 0;
 
-          const sortedArray = team.teams.sort((a, b) => (b.round1+b.round2+b.round3) - (a.round1+a.round2+a.round3));
+          const sortedArray = team.teams.sort((a, b) => pointsSum(b) - pointsSum(a));
 
           return (
             <Card
@@ -50,7 +51,7 @@ const Groups = ({ getGroups, groups }) => {
               <Card.Body>
                 <Card.Title>
                   {sortedArray.map((item) => {
-                    const pointsSum = item.round1+item.round2+item.round3;
+                    
                     const placeInGroup = positions[num].label;
                     num > 2 ? (num = 0) : (num += 1);
 
@@ -58,7 +59,7 @@ const Groups = ({ getGroups, groups }) => {
                       <Row key={item.id}>
                         <Col xs={2}>{placeInGroup}</Col>
                         <Col xs={8}>{item.name}</Col>
-                        <Col xs={2}>{pointsSum}</Col>
+                        <Col xs={2}>{pointsSum(item)}</Col>
                       </Row>
                     );
                   })}
