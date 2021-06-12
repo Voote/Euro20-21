@@ -29,9 +29,9 @@ module.exports = [
     time: labels.time18,
     day: labels.Saturday,
     team1: labels.Denmark,
-    score1: '-',
+    score1: 0,
     team2: labels.Finland,
-    score2: '-',
+    score2: 1,
     city: labels.Copenhagen
   },
   {
