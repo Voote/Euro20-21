@@ -76,7 +76,6 @@ a {
 
 .card {
   border: none;
-
   &__border {
     margin: auto 2em;
     border-radius: 70%;
@@ -88,7 +87,8 @@ a {
   }
 
   &__group {
-    width: 90vw;
+    min-width: 290px;
+    max-width: 340px;
     margin: 0rem 5vw -2rem 5vw;
     border-radius: 50px;
     padding-top: 0.5em;
