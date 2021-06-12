@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import { statusType } from '../constants';
 import { getGroups } from '../actions/index';
 import colorSwitch from './colorSwitch';
@@ -27,9 +27,9 @@ const Groups = ({ getGroups, groups }) => {
   let num = 0;
 
   return (
-    <div>
+    <Container fluid>
       <div>{headerText}</div>
-      <div className="frame">
+      <Row className="frame">
         {groups.map((team) => {
           let bgColor;
           const amount = (item) => item.round1 + item.round2 + item.round3;
@@ -48,40 +48,37 @@ const Groups = ({ getGroups, groups }) => {
           previousGroup = team.group;
 
           return (
-            <Card
-              key={team.id}
-              bg={bgColor}
-              text="dark"
-              className="card__group"
-            >
-              <Card.Header>
-                <h4>
-                  <span className="card__group--header">{groupHeader}</span>
-                  <strong>{team.group}</strong>
-                </h4>
-              </Card.Header>
-              <Card.Body>
-                <Card.Title>
-                  {sortedArray.map((item) => {
-                    const placeInGroup = positions[num].label;
-                    num > 2 ? (num = 0) : (num += 1);
+            <Col xs={12} md={6} xl={4} key={team.id}>
+              <Card bg={bgColor} text="dark" className="card__group">
+                <Card.Header>
+                  <h4>
+                    <span className="card__group--header">{groupHeader}</span>
+                    <strong>{team.group}</strong>
+                  </h4>
+                </Card.Header>
+                <Card.Body>
+                  <Card.Title>
+                    {sortedArray.map((item) => {
+                      const placeInGroup = positions[num].label;
+                      num > 2 ? (num = 0) : (num += 1);
 
-                    return (
-                      <Row key={item.id}>
-                        <Col xs={2}>{placeInGroup}</Col>
-                        <Col xs={8}>{item.name}</Col>
-                        <Col xs={2}>{amount(item)}</Col>
-                      </Row>
-                    );
-                  })}
-                </Card.Title>
-                <div className="card__border card__border--group" />
-              </Card.Body>
-            </Card>
+                      return (
+                        <Row key={item.id}>
+                          <Col xs={2}>{placeInGroup}</Col>
+                          <Col xs={8}>{item.name}</Col>
+                          <Col xs={2}>{amount(item)}</Col>
+                        </Row>
+                      );
+                    })}
+                  </Card.Title>
+                  <div className="card__border card__border--group" />
+                </Card.Body>
+              </Card>
+            </Col>
           );
         })}
-      </div>
-    </div>
+      </Row>
+    </Container>
   );
 };
 
