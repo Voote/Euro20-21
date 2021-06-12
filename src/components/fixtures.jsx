@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import { statusType } from '../constants';
 import { getFixtures } from '../actions';
 
@@ -26,43 +26,52 @@ const Fixtures = ({ getFixtures, fixtures }) => {
   let previousDate;
 
   return (
-    <div>
-      {fixtures.map((match) => {
-        const dayJune = 'th June';
-        const utc = ' (UTC)';
-        const cardHeader = (
-          <Card.Header>
-            {match.day} {match.date}
-            {dayJune}
-          </Card.Header>
-        );
-        const bgColor = colorSwitch(match.date % 3);
-        const dateHeader = previousDate !== match.date && cardHeader;
-        previousDate = match.date;
+    <Container fluid>
+      <Row>
+        {fixtures.map((match) => {
+          const dayJune = 'th June';
+          const utc = ' (UTC)';
+          const cardHeader = (
+            <Card.Header>
+              {match.day} {match.date}
+              {dayJune}
+            </Card.Header>
+          );
+          const bgColor = colorSwitch(match.date % 3);
+          const dateHeader = previousDate !== match.date && cardHeader;
+          previousDate = match.date;
 
-        return (
-          <Card key={match.id} bg={bgColor} text="dark" className="card__match">
-            {dateHeader}
-            <Card.Body>
-              <Card.Title>
-                <Row>
-                  <Col xs={5}>{match.team1}</Col>
-                  <Col xs={2}>
-                    {match.score1}:{match.score2}
-                  </Col>
-                  <Col xs={5}>{match.team2}</Col>
-                </Row>
-              </Card.Title>
-              <Card.Text>
-                {match.city} {match.time}
-                {utc}
-              </Card.Text>
-              <div className="card__border" />
-            </Card.Body>
-          </Card>
-        );
-      })}
-    </div>
+          return (
+            <Col xs={12} md={6} xl={4} key={match.id}>
+              <Card
+                key={match.id}
+                bg={bgColor}
+                text="dark"
+                className="card__match"
+              >
+                {dateHeader}
+                <Card.Body>
+                  <Card.Title>
+                    <Row>
+                      <Col xs={5}>{match.team1}</Col>
+                      <Col xs={2}>
+                        {match.score1}:{match.score2}
+                      </Col>
+                      <Col xs={5}>{match.team2}</Col>
+                    </Row>
+                  </Card.Title>
+                  <Card.Text>
+                    {match.city} {match.time}
+                    {utc}
+                  </Card.Text>
+                  <div className="card__border" />
+                </Card.Body>
+              </Card>
+            </Col>
+          );
+        })}
+      </Row>
+    </Container>
   );
 };
 
