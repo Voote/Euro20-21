@@ -30,8 +30,8 @@ const Groups = ({ getGroups, groups }) => {
       <div className="frame">
         {groups.map((team) => {
           let bgColor;
-
-          const sortedArray = team.teams.sort((a, b) => b.points - a.points);
+          const amount = (item) => item.round1 + item.round2 + item.round3;
+          const sortedArray = team.teams.sort((a, b) => amount(b) - amount(a));
           const randomColor = colorSwitch(Math.floor(Math.random() * 4));
           const randomColorById = colorSwitch(
             Math.floor(Math.random() * team.id) % 4
@@ -68,7 +68,7 @@ const Groups = ({ getGroups, groups }) => {
                       <Row key={item.id}>
                         <Col xs={2}>{placeInGroup}</Col>
                         <Col xs={8}>{item.name}</Col>
-                        <Col xs={2}>{item.points}</Col>
+                        <Col xs={2}>{amount(item)}</Col>
                       </Row>
                     );
                   })}
