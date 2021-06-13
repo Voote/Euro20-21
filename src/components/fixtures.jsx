@@ -2,20 +2,10 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import { statusType } from '../constants';
 import { getFixtures } from '../actions';
-
-const colorSwitch = (param) => {
-  switch (param) {
-    case 1:
-      return 'dark';
-    case 2:
-      return 'info';
-    default:
-      return 'warning';
-  }
-};
+import colorSwitch from './colorSwitch';
 
 const Fixtures = ({ getFixtures, fixtures }) => {
   useEffect(() => {
@@ -24,9 +14,15 @@ const Fixtures = ({ getFixtures, fixtures }) => {
   }, []);
 
   let previousDate;
+  let colorCounter = -1;
 
   return (
-    <div>
+    <Container>
+      <Row>
+        
+        
+
+
       {fixtures.map((match) => {
         const dayJune = 'th June';
         const utc = ' (UTC)';
@@ -36,12 +32,19 @@ const Fixtures = ({ getFixtures, fixtures }) => {
             {dayJune}
           </Card.Header>
         );
-        const bgColor = colorSwitch(match.date % 3);
+        previousDate !== match.date && colorCounter ++;
         const dateHeader = previousDate !== match.date && cardHeader;
         previousDate = match.date;
-
+        colorCounter >= colorSwitch.length && (colorCounter = 0);
+        const bgColor = colorSwitch[colorCounter];
+        
         return (
-          <Card key={match.id} bg={bgColor} text="dark" className="card__match">
+          <Col key={match.id} >
+          <Card          
+          bg={bgColor} 
+          text="dark" 
+          className="card__match"
+          >
             {dateHeader}
             <Card.Body>
               <Card.Title>
@@ -60,9 +63,12 @@ const Fixtures = ({ getFixtures, fixtures }) => {
               <div className="card__border" />
             </Card.Body>
           </Card>
+          </Col>
         );
       })}
-    </div>
+
+      </Row>
+    </Container>
   );
 };
 
