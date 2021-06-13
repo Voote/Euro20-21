@@ -33,7 +33,6 @@ const Fixtures = ({ getFixtures, fixtures }) => {
           previousDate = match.date;
           colorCounter >= colorSwitch.length && (colorCounter = 0);
           const bgColor = colorSwitch[colorCounter];
-
           return (
             <Col xs={12} md={6} xl={4} key={match.id}>
               <Card
@@ -45,18 +44,19 @@ const Fixtures = ({ getFixtures, fixtures }) => {
                 {dateHeader}
                 <Card.Body>
                   <Card.Title>
-                    <Row>
-                      <Col xs={5}>{match.team1}</Col>
-                      <Col xs={2}>
-                        {match.score1}:{match.score2}
-                      </Col>
-                      <Col xs={5}>{match.team2}</Col>
-                    </Row>
+                    {match.matches.map((match) => {
+                        return (
+                          <Row key={match.id}>
+                            <Col xs={5}>{match.team1}</Col>
+                            <Col xs={2}>{match.score1}:{match.score2}</Col>
+                            <Col xs={5}>{match.team2}</Col>
+                            <Card.Footer>
+                              {match.city} {match.time} {utc}
+                            </Card.Footer>
+                          </Row>
+                        );
+                    })}
                   </Card.Title>
-                  <Card.Text>
-                    {match.city} {match.time}
-                    {utc}
-                  </Card.Text>
                   <div className="card__border" />
                 </Card.Body>
               </Card>
