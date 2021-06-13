@@ -100,7 +100,7 @@ a {
   }
 
   &__match {
-    width: 90vw;
+    min-width: 290px;
     max-width: 340px;
     margin: 0rem 5vw -2.7rem 5vw;
     border-radius: 50px 50px 0px 0px;
