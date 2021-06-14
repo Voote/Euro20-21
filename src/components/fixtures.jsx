@@ -39,22 +39,27 @@ const Fixtures = ({ getFixtures, fixtures }) => {
                 key={match.id}
                 bg={bgColor}
                 text="dark"
-                className="card__match"
+                className="card__match card__teams"
               >
                 {dateHeader}
                 <Card.Body>
                   <Card.Title>
                     {match.matches.map((match) => {
-                        return (
-                          <Row key={match.id}>
+                      return (
+                        <div key={match.id}>
+                          <Row>
                             <Col xs={5}>{match.team1}</Col>
-                            <Col xs={2}>{match.score1}:{match.score2}</Col>
+                            <Col xs={2}>
+                              {match.score1}:{match.score2}
+                            </Col>
                             <Col xs={5}>{match.team2}</Col>
-                            <Card.Footer>
-                              {match.city} {match.time} {utc}
-                            </Card.Footer>
                           </Row>
-                        );
+                          <Card.Text className="labels__header card__teams--gap">
+                            <span>{match.city} </span>
+                            {match.time} {utc}
+                          </Card.Text>
+                        </div>
+                      );
                     })}
                   </Card.Title>
                   <div className="card__border" />

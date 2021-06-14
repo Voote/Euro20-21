@@ -42,7 +42,7 @@ const Groups = ({ getGroups, groups }) => {
               <Card bg={bgColor} text="dark" className="card__group">
                 <Card.Header>
                   <h4>
-                    <span className="card__group--header">{groupHeader}</span>
+                    <span className="labels__header">{groupHeader}</span>
                     <strong>{team.group}</strong>
                   </h4>
                 </Card.Header>
