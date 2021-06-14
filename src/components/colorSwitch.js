@@ -1,8 +1,3 @@
-const colorSwitch = [
-    'info',
-    'warning',
-    'dark',
-    'light'
-  ];
+const colorSwitch = ['info', 'warning', 'dark', 'success'];
 
 export default colorSwitch;

@@ -62,9 +62,9 @@ module.exports = [
         time: labels.time15,
         day: labels.Sunday,
         team1: labels.England,
-        score1: '-',
+        score1: 1,
         team2: labels.Croatia,
-        score2: '-',
+        score2: 0,
         city: labels.London
       },
       {
@@ -72,9 +72,9 @@ module.exports = [
         time: labels.time18,
         day: labels.Sunday,
         team1: labels.Austria,
-        score1: '-',
+        score1: 3,
         team2: labels.Macedonia,
-        score2: '-',
+        score2: 1,
         city: labels.Bucharest
       },
       {
@@ -82,9 +82,9 @@ module.exports = [
         time: labels.time21,
         day: labels.Sunday,
         team1: labels.Netherlands,
-        score1: '-',
+        score1: 3,
         team2: labels.Ukraine,
-        score2: '-',
+        score2: 2,
         city: labels.Amsterdam
       }
     ]
@@ -98,9 +98,9 @@ module.exports = [
         time: labels.time15,
         day: labels.Monday,
         team1: labels.Scotland,
-        score1: '-',
+        score1: 0,
         team2: labels.Czech,
-        score2: '-',
+        score2: 2,
         city: labels.Glasgow
       },
       {
@@ -108,9 +108,9 @@ module.exports = [
         time: labels.time18,
         day: labels.Monday,
         team1: labels.Poland,
-        score1: '-',
+        score1: 1,
         team2: labels.Slovakia,
-        score2: '-',
+        score2: 2,
         city: labels.Petersburg
       },
       {
@@ -118,9 +118,9 @@ module.exports = [
         time: labels.time21,
         day: labels.Monday,
         team1: labels.Spain,
-        score1: '-',
+        score1: 0,
         team2: labels.Sweden,
-        score2: '-',
+        score2: 0,
         city: labels.Seville
       }
     ]
