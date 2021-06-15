@@ -23,3 +23,7 @@ Open [http://localhost:3000](http://localhost:3000) (with API [http://localhost:
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+## Authors:
+
+### Jakub Krzywanski and Artur Garlej

@@ -4,7 +4,8 @@ $fontDarkColor: #212529;
 $sunny: #ec9321;
 $primary: #0f9cb1;
 $secondary: #863970;
-$greenish: #b4cb75;
+$greenish: #7cc67d;
+$darkBlue: #307187;
 $darkCard: #343a40;
 $antySecondary: #79c68f;
 $antySunny: #136cde;
@@ -25,7 +26,7 @@ body {
   background-color: $sunny !important;
 }
 
-.bg-info {
+.bg-secondary {
   background-color: $secondary !important;
   color: $fontColor !important;
 }
@@ -40,6 +41,10 @@ body {
 
 .btn {
   color: $fontDarkColor;
+}
+
+.btn-secondary {
+  background-color: $secondary !important;
 }
 
 .btn-danger {
@@ -74,6 +79,12 @@ a {
   .card {
     border-top: 0.1rem outset black;
     border-left: 1px outset black;
+  }
+  &--color {
+    .card {
+      border-top-color: $darkBlue;
+      border-left: none;
+    }
   }
 }
 

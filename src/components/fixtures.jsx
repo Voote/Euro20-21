@@ -34,7 +34,13 @@ const Fixtures = ({ getFixtures, fixtures }) => {
           colorCounter >= colorSwitch.length && (colorCounter = 0);
           const bgColor = colorSwitch[colorCounter];
           return (
-            <Col xs={12} md={6} xl={4} key={match.id}>
+            <Col
+              xs={12}
+              md={6}
+              xl={4}
+              key={match.id}
+              className="frame frame--color"
+            >
               <Card
                 key={match.id}
                 bg={bgColor}
