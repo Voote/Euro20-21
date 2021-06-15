@@ -55,8 +55,9 @@ const Groups = ({ getGroups, groups }) => {
                       return (
                         <Row key={item.id}>
                           <Col xs={2}>{placeInGroup}</Col>
-                          <Col xs={8}>{item.name}</Col>
-                          <Col xs={2}>{points(item)}</Col>
+                          <Col xs={7}>{item.name}</Col>
+                          <Col xs={1}>{item.matches}</Col>
+                          <Col xs={1}>{points(item)}</Col>
                         </Row>
                       );
                     })}
