@@ -3,14 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@hapi/topo": "^3.1.6",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^4.6.0",
-    "browserslist": "^4.16.6",
-    "chokidar": "^3.5.1",
-    "core-js": "^3.14.0",
     "json-server": "^0.16.1",
     "node-sass": "^6.0.0",
     "prop-types": "^15.7.2",
@@ -21,10 +17,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
     "redux": "^4.1.0",
-    "redux-thunk": "^2.3.0",
-    "trim-newlines": "^4.0.2",
-    "urix": "^0.1.0",
-    "web-vitals": "^1.0.1"
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
