@@ -44,5 +44,8 @@ module.exports = {
   London: 'London',
   Munich: 'Munich',
   Rome: 'Rome',
-  Petersburg: 'St Petersburg'
+  Petersburg: 'St Petersburg',
+  Fixtures: 'Fixtures',
+  Groups: 'Groups',
+  Knockout: 'Knockout'
 };

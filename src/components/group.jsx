@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import { statusType } from '../constants';
 import { getGroups } from '../actions/index';
 import colorSwitch from './colorSwitch';
@@ -13,7 +13,6 @@ const positions = [
   { id: 3, label: '3rd' },
   { id: 4, label: '4th' }
 ];
-const pointsSum = (item) => item.round1+item.round2+item.round3;
 
 const Groups = ({ getGroups, groups }) => {
   useEffect(() => {
@@ -21,56 +20,56 @@ const Groups = ({ getGroups, groups }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const headerText = 'Group View';
+  const groupHeader = 'GROUP ';
   let num = 0;
   let colorCounter = 0;
 
   return (
-    <div>
-      <div>Group View</div>
-      <div>
+    <Container fluid>
+      <div>{headerText}</div>
+      <Row className="frame">
         {groups.map((team) => {
           const bgColor = colorSwitch[colorCounter];
-          colorCounter ++;
-          (colorCounter >= colorSwitch.length) && (colorCounter = 0);
+          colorCounter++;
+          colorCounter >= colorSwitch.length && (colorCounter = 0);
 
-          const sortedArray = team.teams.sort((a, b) => pointsSum(b) - pointsSum(a));
+          const points = (item) => item.round1 + item.round2 + item.round3;
+          const sortedArray = team.teams.sort((a, b) => points(b) - points(a));
 
           return (
-            <Card
-              key={team.id}
-              bg={bgColor}
-              text="dark"
-              className="card__group"
-            >
-              <Card.Header>
-                <h4>
-                  <span className="card__group--header">GROUP </span>
-                  <strong>{team.group}</strong>
-                </h4>
-              </Card.Header>
-              <Card.Body>
-                <Card.Title>
-                  {sortedArray.map((item) => {
-                    
-                    const placeInGroup = positions[num].label;
-                    num > 2 ? (num = 0) : (num += 1);
+            <Col xs={12} md={6} xl={4} key={team.id}>
+              <Card bg={bgColor} text="dark" className="card__group">
+                <Card.Header>
+                  <h4>
+                    <span className="labels__header">{groupHeader}</span>
+                    <strong>{team.group}</strong>
+                  </h4>
+                </Card.Header>
+                <Card.Body>
+                  <Card.Title>
+                    {sortedArray.map((item) => {
+                      const placeInGroup = positions[num].label;
+                      num > 2 ? (num = 0) : (num += 1);
 
-                    return (
-                      <Row key={item.id}>
-                        <Col xs={2}>{placeInGroup}</Col>
-                        <Col xs={8}>{item.name}</Col>
-                        <Col xs={2}>{pointsSum(item)}</Col>
-                      </Row>
-                    );
-                  })}
-                </Card.Title>
-                <div className="card__border card__border--group" />
-              </Card.Body>
-            </Card>
+                      return (
+                        <Row key={item.id}>
+                          <Col xs={2}>{placeInGroup}</Col>
+                          <Col xs={7}>{item.name}</Col>
+                          <Col xs={1}>{item.matches}</Col>
+                          <Col xs={1}>{points(item)}</Col>
+                        </Row>
+                      );
+                    })}
+                  </Card.Title>
+                  <div className="card__border card__border--group" />
+                </Card.Body>
+              </Card>
+            </Col>
           );
         })}
-      </div>
-    </div>
+      </Row>
+    </Container>
   );
 };
 
