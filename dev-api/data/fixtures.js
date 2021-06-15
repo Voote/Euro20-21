@@ -134,9 +134,9 @@ module.exports = [
         time: labels.time18,
         day: labels.Tuesday,
         team1: labels.Hungary,
-        score1: '-',
+        score1: 0,
         team2: labels.Portugal,
-        score2: '-',
+        score2: 3,
         city: labels.Budapest
       },
       {
@@ -144,9 +144,9 @@ module.exports = [
         time: labels.time21,
         day: labels.Tuesday,
         team1: labels.France,
-        score1: '-',
+        score1: 1,
         team2: labels.Germany,
-        score2: '-',
+        score2: 0,
         city: labels.Munich
       }
     ]
