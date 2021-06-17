@@ -160,9 +160,9 @@ module.exports = [
         time: labels.time15,
         day: labels.Wednesday,
         team1: labels.Finland,
-        score1: '-',
+        score1: 0,
         team2: labels.Russia,
-        score2: '-',
+        score2: 1,
         city: labels.Petersburg
       },
       {
@@ -170,9 +170,9 @@ module.exports = [
         time: labels.time18,
         day: labels.Wednesday,
         team1: labels.Turkey,
-        score1: '-',
+        score1: 0,
         team2: labels.Wales,
-        score2: '-',
+        score2: 2,
         city: labels.Baku
       },
       {
@@ -180,9 +180,9 @@ module.exports = [
         time: labels.time21,
         day: labels.Wednesday,
         team1: labels.Italy,
-        score1: '-',
+        score1: 3,
         team2: labels.Switzerland,
-        score2: '-',
+        score2: 0,
         city: labels.Rome
       }
     ]
