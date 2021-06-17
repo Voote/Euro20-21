@@ -1,16 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
-
-$primary: #00b4c1;
-$secondary: #ff4b3e;
 $fontColor: #dbeaf1;
 $fontDarkColor: #212529;
-$purple: #863970;
 $sunny: #ec9321;
-$bluish: #0f9cb1;
+$primary: #0f9cb1;
+$secondary: #863970;
+$greenish: #7cc67d;
+$darkBlue: #307187;
 $darkCard: #343a40;
-$antyPurple: #79c68f;
+$antySecondary: #79c68f;
 $antySunny: #136cde;
-$antyBluish: #f0634e;
+$antyPrimary: #f0634e;
 
 html,
 body {
@@ -19,7 +18,7 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  background-color: $purple;
+  background-color: $primary;
   color: $fontColor;
 }
 
@@ -27,8 +26,13 @@ body {
   background-color: $sunny !important;
 }
 
-.bg-info {
-  background-color: $bluish !important;
+.bg-secondary {
+  background-color: $secondary !important;
+  color: $fontColor !important;
+}
+
+.bg-success {
+  background-color: $greenish !important;
 }
 
 .bg-dark {
@@ -39,8 +43,12 @@ body {
   color: $fontDarkColor;
 }
 
+.btn-secondary {
+  background-color: $secondary !important;
+}
+
 .btn-danger {
-  background-color: $purple !important;
+  background-color: $primary !important;
 }
 
 .btn-warning {
@@ -72,24 +80,31 @@ a {
     border-top: 0.1rem outset black;
     border-left: 1px outset black;
   }
+  &--color {
+    .card {
+      border-top-color: $darkBlue;
+      border-left: none;
+    }
+  }
 }
 
 .card {
   border: none;
   &__border {
-    margin: auto 2em;
-    border-radius: 70%;
-    border-top: 0.2em double $purple;
+    margin: -1em 2.5em 14.2em 2.5em;
+    border-radius: 40%;
+    border-top: 0.2em double $primary;
     text-align: center;
     &--group {
       padding-top: 0.6rem;
+      margin: 0.1em 2em;
     }
   }
 
   &__group {
     min-width: 290px;
     max-width: 340px;
-    margin: 0rem 5vw -2rem 5vw;
+    margin: 0rem 5vw -2em 5vw;
     border-radius: 50px;
     padding-top: 0.5em;
     &--header {
@@ -100,10 +115,34 @@ a {
   }
 
   &__match {
-    width: 90vw;
-    margin: 0rem 5vw -2.7rem 5vw;
+    min-width: 290px;
+    max-width: 340px;
+    margin: 0rem 5vw -17rem 5vw;
     border-radius: 50px 50px 0px 0px;
     padding-bottom: 2rem;
+    &--city {
+      font-weight: 500;
+      font-size: 90%;
+      letter-spacing: -1pt;
+    }
+  }
+
+  &__teams {
+    &--gap {
+      padding-top: 0.2em;
+      padding-bottom: 5vh;
+    }
+    .card-body {
+      padding: 1em 0.4rem;
+    }
+  }
+}
+
+.labels {
+  &__header {
+    font-weight: 500;
+    font-size: 90%;
+    letter-spacing: -1pt;
   }
 }
 

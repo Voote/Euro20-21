@@ -11,10 +11,19 @@ In the project directory, you can run:
 Install packages listed in package.json.
 It's required to install packages before starting an app.
 
+### `npm run api`
+
+Start API in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser console.
+
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) (with API [http://localhost:3001](http://localhost:3001)) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+## Authors:
+
+### Jakub Krzywanski and Artur Garlej

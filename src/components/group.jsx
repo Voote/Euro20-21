@@ -22,37 +22,27 @@ const Groups = ({ getGroups, groups }) => {
 
   const headerText = 'Group View';
   const groupHeader = 'GROUP ';
-  let previousGroup;
-  let previousColor;
   let num = 0;
+  let colorCounter = 0;
 
   return (
     <Container fluid>
       <div>{headerText}</div>
       <Row className="frame">
         {groups.map((team) => {
-          let bgColor;
-          const amount = (item) => item.round1 + item.round2 + item.round3;
-          const sortedArray = team.teams.sort((a, b) => amount(b) - amount(a));
-          const randomColor = colorSwitch(Math.floor(Math.random() * 4));
-          const randomColorById = colorSwitch(
-            Math.floor(Math.random() * team.id) % 4
-          );
+          const bgColor = colorSwitch[colorCounter];
+          colorCounter++;
+          colorCounter >= colorSwitch.length && (colorCounter = 0);
 
-          (previousGroup === team.group && (bgColor = previousColor)) ||
-            ((bgColor =
-              (previousColor !== randomColorById && randomColorById) ||
-              randomColor) &&
-              (previousColor = bgColor));
-
-          previousGroup = team.group;
+          const points = (item) => item.round1 + item.round2 + item.round3;
+          const sortedArray = team.teams.sort((a, b) => points(b) - points(a));
 
           return (
             <Col xs={12} md={6} xl={4} key={team.id}>
               <Card bg={bgColor} text="dark" className="card__group">
                 <Card.Header>
                   <h4>
-                    <span className="card__group--header">{groupHeader}</span>
+                    <span className="labels__header">{groupHeader}</span>
                     <strong>{team.group}</strong>
                   </h4>
                 </Card.Header>
@@ -65,8 +55,9 @@ const Groups = ({ getGroups, groups }) => {
                       return (
                         <Row key={item.id}>
                           <Col xs={2}>{placeInGroup}</Col>
-                          <Col xs={8}>{item.name}</Col>
-                          <Col xs={2}>{amount(item)}</Col>
+                          <Col xs={7}>{item.name}</Col>
+                          <Col xs={1}>{item.matches}</Col>
+                          <Col xs={1}>{points(item)}</Col>
                         </Row>
                       );
                     })}
