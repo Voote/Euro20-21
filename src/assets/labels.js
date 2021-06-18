@@ -10,7 +10,7 @@ module.exports = {
   Germany: 'Germany',
   Hungary: 'Hungary',
   Italy: 'Italy',
-  Netherlands: 'Holland',
+  Netherlands: 'Netherlands',
   Macedonia: 'North Macedonia',
   Portugal: 'Portugal',
   Poland: 'Poland',

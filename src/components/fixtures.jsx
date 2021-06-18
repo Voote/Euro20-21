@@ -14,7 +14,7 @@ const Fixtures = ({ getFixtures, fixtures }) => {
   }, []);
 
   let previousDate;
-  let colorCounter = -1;
+  let colorCounter = 0;
 
   return (
     <Container fluid>
@@ -50,23 +50,25 @@ const Fixtures = ({ getFixtures, fixtures }) => {
                 {dateHeader}
                 <Card.Body>
                   <Card.Title>
-                    {match.matches.map((match) => {
-                      return (
-                        <div key={match.id}>
-                          <Row>
-                            <Col xs={5}>{match.team1}</Col>
-                            <Col xs={2}>
-                              {match.score1}:{match.score2}
-                            </Col>
-                            <Col xs={5}>{match.team2}</Col>
-                          </Row>
-                          <Card.Text className="labels__header card__teams--gap">
-                            <span>{match.city} </span>
-                            {match.time} {utc}
-                          </Card.Text>
-                        </div>
-                      );
-                    })}
+                    {match.matches.map((match) => (
+                      <div key={match.id}>
+                        <Row>
+                          <Col className="card__match--left" xs={5}>
+                            {match.team1}
+                          </Col>
+                          <Col xs={2}>
+                            {match.score1}:{match.score2}
+                          </Col>
+                          <Col className="card__match--right" xs={5}>
+                            {match.team2}
+                          </Col>
+                        </Row>
+                        <Card.Text className="labels__header card__teams--gap">
+                          <span>{match.city} </span>
+                          {match.time} {utc}
+                        </Card.Text>
+                      </div>
+                    ))}
                   </Card.Title>
                   <div className="card__border" />
                 </Card.Body>

@@ -7,6 +7,7 @@ module.exports = [
     matches: [
       {
         id: 0,
+        group: 'A',
         time: labels.time21,
         day: labels.Friday,
         team1: labels.Turkey,
@@ -23,6 +24,7 @@ module.exports = [
     matches: [
       {
         id: 0,
+        group: 'A',
         time: labels.time15,
         day: labels.Saturday,
         team1: labels.Wales,
@@ -33,6 +35,7 @@ module.exports = [
       },
       {
         id: 1,
+        group: 'B',
         time: labels.time18,
         day: labels.Saturday,
         team1: labels.Denmark,
@@ -43,6 +46,7 @@ module.exports = [
       },
       {
         id: 2,
+        group: 'B',
         time: labels.time21,
         day: labels.Saturday,
         team1: labels.Belgium,
@@ -59,6 +63,7 @@ module.exports = [
     matches: [
       {
         id: 0,
+        group: 'D',
         time: labels.time15,
         day: labels.Sunday,
         team1: labels.England,
@@ -69,6 +74,7 @@ module.exports = [
       },
       {
         id: 1,
+        group: 'C',
         time: labels.time18,
         day: labels.Sunday,
         team1: labels.Austria,
@@ -79,6 +85,7 @@ module.exports = [
       },
       {
         id: 2,
+        group: 'C',
         time: labels.time21,
         day: labels.Sunday,
         team1: labels.Netherlands,
@@ -95,6 +102,7 @@ module.exports = [
     matches: [
       {
         id: 0,
+        group: 'D',
         time: labels.time15,
         day: labels.Monday,
         team1: labels.Scotland,
@@ -105,6 +113,7 @@ module.exports = [
       },
       {
         id: 1,
+        group: 'E',
         time: labels.time18,
         day: labels.Monday,
         team1: labels.Poland,
@@ -115,6 +124,7 @@ module.exports = [
       },
       {
         id: 2,
+        group: 'E',
         time: labels.time21,
         day: labels.Monday,
         team1: labels.Spain,
@@ -131,6 +141,7 @@ module.exports = [
     matches: [
       {
         id: 0,
+        group: 'F',
         time: labels.time18,
         day: labels.Tuesday,
         team1: labels.Hungary,
@@ -141,6 +152,7 @@ module.exports = [
       },
       {
         id: 1,
+        group: 'F',
         time: labels.time21,
         day: labels.Tuesday,
         team1: labels.France,
@@ -157,6 +169,7 @@ module.exports = [
     matches: [
       {
         id: 0,
+        group: 'B',
         time: labels.time15,
         day: labels.Wednesday,
         team1: labels.Finland,
@@ -167,6 +180,7 @@ module.exports = [
       },
       {
         id: 1,
+        group: 'A',
         time: labels.time18,
         day: labels.Wednesday,
         team1: labels.Turkey,
@@ -177,6 +191,7 @@ module.exports = [
       },
       {
         id: 2,
+        group: 'A',
         time: labels.time21,
         day: labels.Wednesday,
         team1: labels.Italy,
@@ -193,32 +208,35 @@ module.exports = [
     matches: [
       {
         id: 0,
+        group: 'C',
         time: labels.time15,
         day: labels.Thursday,
         team1: labels.Ukraine,
-        score1: '-',
+        score1: 2,
         team2: labels.Macedonia,
-        score2: '-',
+        score2: 1,
         city: labels.Bucharest
       },
       {
         id: 1,
+        group: 'B',
         time: labels.time18,
         day: labels.Thursday,
         team1: labels.Denmark,
-        score1: '-',
+        score1: 1,
         team2: labels.Belgium,
-        score2: '-',
+        score2: 2,
         city: labels.Copenhagen
       },
       {
         id: 2,
+        group: 'C',
         time: labels.time21,
         day: labels.Thursday,
         team1: labels.Netherlands,
-        score1: '-',
+        score1: 2,
         team2: labels.Austria,
-        score2: '-',
+        score2: 0,
         city: labels.Amsterdam
       }
     ]
@@ -229,16 +247,18 @@ module.exports = [
     matches: [
       {
         id: 0,
+        group: 'E',
         time: labels.time15,
         day: labels.Friday,
         team1: labels.Sweden,
-        score1: '-',
+        score1: 1,
         team2: labels.Slovakia,
-        score2: '-',
+        score2: 0,
         city: labels.Petersburg
       },
       {
         id: 1,
+        group: 'D',
         date: 18,
         time: labels.time18,
         day: labels.Friday,
@@ -250,6 +270,7 @@ module.exports = [
       },
       {
         id: 2,
+        group: 'D',
         date: 18,
         time: labels.time21,
         day: labels.Friday,
@@ -267,6 +288,7 @@ module.exports = [
     matches: [
       {
         id: 0,
+        group: 'F',
         time: labels.time15,
         day: labels.Saturday,
         team1: labels.Hungary,
@@ -277,6 +299,7 @@ module.exports = [
       },
       {
         id: 1,
+        group: 'F',
         time: labels.time18,
         day: labels.Saturday,
         team1: labels.Portugal,
@@ -287,6 +310,7 @@ module.exports = [
       },
       {
         id: 2,
+        group: 'E',
         time: labels.time21,
         day: labels.Saturday,
         team1: labels.Spain,
@@ -303,6 +327,7 @@ module.exports = [
     matches: [
       {
         id: 0,
+        group: 'A',
         time: labels.time18,
         day: labels.Sunday,
         team1: labels.Switzerland,
@@ -313,6 +338,7 @@ module.exports = [
       },
       {
         id: 1,
+        group: 'A',
         time: labels.time18,
         day: labels.Sunday,
         team1: labels.Italy,
@@ -329,6 +355,7 @@ module.exports = [
     matches: [
       {
         id: 0,
+        group: 'C',
         time: labels.time18,
         day: labels.Monday,
         team1: labels.Macedonia,
@@ -339,6 +366,7 @@ module.exports = [
       },
       {
         id: 1,
+        group: 'C',
         time: labels.time18,
         day: labels.Monday,
         team1: labels.Ukraine,
@@ -349,6 +377,7 @@ module.exports = [
       },
       {
         id: 2,
+        group: 'B',
         time: labels.time21,
         day: labels.Monday,
         team1: labels.Russia,
@@ -359,6 +388,7 @@ module.exports = [
       },
       {
         id: 3,
+        group: 'B',
         time: labels.time21,
         day: labels.Monday,
         team1: labels.Finland,
@@ -375,6 +405,7 @@ module.exports = [
     matches: [
       {
         id: 0,
+        group: 'D',
         time: labels.time21,
         day: labels.Tuesday,
         team1: labels.Croatia,
@@ -385,6 +416,7 @@ module.exports = [
       },
       {
         id: 1,
+        group: 'D',
         time: labels.time21,
         day: labels.Tuesday,
         team1: labels.Czech,
@@ -401,6 +433,7 @@ module.exports = [
     matches: [
       {
         id: 0,
+        group: 'E',
         time: labels.time18,
         day: labels.Wednesday,
         team1: labels.Slovakia,
@@ -411,6 +444,7 @@ module.exports = [
       },
       {
         id: 33,
+        group: 'E',
         time: labels.time18,
         day: labels.Wednesday,
         team1: labels.Sweden,
@@ -421,6 +455,7 @@ module.exports = [
       },
       {
         id: 2,
+        group: 'F',
         time: labels.time21,
         day: labels.Wednesday,
         team1: labels.Portugal,
@@ -431,6 +466,7 @@ module.exports = [
       },
       {
         id: 3,
+        group: 'F',
         time: labels.time21,
         day: labels.Wednesday,
         team1: labels.Germany,

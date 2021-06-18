@@ -120,10 +120,11 @@ a {
     margin: 0rem 5vw -17rem 5vw;
     border-radius: 50px 50px 0px 0px;
     padding-bottom: 2rem;
-    &--city {
-      font-weight: 500;
-      font-size: 90%;
-      letter-spacing: -1pt;
+    &--left {
+      padding-right: 0px;
+    }
+    &--right {
+      padding-left: 0px;
     }
   }
 
