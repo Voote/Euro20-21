@@ -45,8 +45,11 @@ const Groups = ({ getFixtures, fixtures, getGroups, groups }) => {
                 (match) => match.group === groupName
               );
             });
+          const groupMatchesFlat = groupMatches.flat();
 
-          console.log(groupMatches);
+          console.log(groupMatchesFlat);
+
+          const utc = ' (UTC)';
           const bgColor = colorSwitch[colorCounter];
           const bgColor2 = colorSwitch[colorCounter2];
           // console.log('color1: ', colorCounter, 'color2: ', colorCounter2);
@@ -57,7 +60,6 @@ const Groups = ({ getFixtures, fixtures, getGroups, groups }) => {
 
           const points = (item) => item.round1 + item.round2 + item.round3;
           const sortedArray = team.teams.sort((a, b) => points(b) - points(a));
-          const utc = ' (UTC)';
 
           return (
             <Col xs={12} md={6} xl={4} key={team.id}>
@@ -87,41 +89,33 @@ const Groups = ({ getFixtures, fixtures, getGroups, groups }) => {
                   <div className="card__border card__border--group" />
                 </Card.Body>
               </Card>
-              {/* <div>
-                {groupMatches.map((array) => (
-                  <Card
-                    key={array.id}
-                    bg={bgColor}
-                    text="dark"
-                    className="card__match card__teams"
-                  >
-                    <Card.Body>
-                      <Card.Title>
-                        {array.matches.map((match) => (
-                          <div key={match.id}>
-                            <Row>
-                              <Col className="card__match--left" xs={5}>
-                                {match.team1}
-                              </Col>
-                              <Col xs={2}>
-                                {match.score1}:{match.score2}
-                              </Col>
-                              <Col className="card__match--right" xs={5}>
-                                {match.team2}
-                              </Col>
-                            </Row>
-                            <Card.Text className="labels__header card__teams--gap">
-                              <span>{match.city} </span>
-                              {match.time} {utc}
-                            </Card.Text>
-                          </div>
-                        ))}
-                      </Card.Title>
-                      <div className="card__border" />
-                    </Card.Body>
-                  </Card>
-                ))}
-              </div> */}
+
+              <Card bg={bgColor2} text="dark" className="card__group">
+                <Card.Body>
+                  <Card.Title>
+                    {groupMatchesFlat.map((match) => (
+                      <div key={match.id}>
+                        <Row>
+                          <Col className="card__match--left" xs={5}>
+                            {match.team1}
+                          </Col>
+                          <Col xs={2}>
+                            {match.score1}:{match.score2}
+                          </Col>
+                          <Col className="card__match--right" xs={5}>
+                            {match.team2}
+                          </Col>
+                        </Row>
+                        <Card.Text className="labels__header card__teams--gap">
+                          <span>{match.city} </span>
+                          {match.time} {utc}
+                        </Card.Text>
+                      </div>
+                    ))}
+                  </Card.Title>
+                  <div className="card__border card__border--group" />
+                </Card.Body>
+              </Card>
             </Col>
           );
         })}

@@ -23,7 +23,7 @@ module.exports = [
     date: 12,
     matches: [
       {
-        id: 0,
+        id: 10,
         group: 'A',
         time: labels.time15,
         day: labels.Saturday,
@@ -34,7 +34,7 @@ module.exports = [
         city: labels.Baku
       },
       {
-        id: 1,
+        id: 11,
         group: 'B',
         time: labels.time18,
         day: labels.Saturday,
@@ -45,7 +45,7 @@ module.exports = [
         city: labels.Copenhagen
       },
       {
-        id: 2,
+        id: 12,
         group: 'B',
         time: labels.time21,
         day: labels.Saturday,
@@ -62,7 +62,7 @@ module.exports = [
     date: 13,
     matches: [
       {
-        id: 0,
+        id: 20,
         group: 'D',
         time: labels.time15,
         day: labels.Sunday,
@@ -73,7 +73,7 @@ module.exports = [
         city: labels.London
       },
       {
-        id: 1,
+        id: 21,
         group: 'C',
         time: labels.time18,
         day: labels.Sunday,
@@ -84,7 +84,7 @@ module.exports = [
         city: labels.Bucharest
       },
       {
-        id: 2,
+        id: 22,
         group: 'C',
         time: labels.time21,
         day: labels.Sunday,
@@ -101,7 +101,7 @@ module.exports = [
     date: 14,
     matches: [
       {
-        id: 0,
+        id: 30,
         group: 'D',
         time: labels.time15,
         day: labels.Monday,
@@ -112,7 +112,7 @@ module.exports = [
         city: labels.Glasgow
       },
       {
-        id: 1,
+        id: 31,
         group: 'E',
         time: labels.time18,
         day: labels.Monday,
@@ -123,7 +123,7 @@ module.exports = [
         city: labels.Petersburg
       },
       {
-        id: 2,
+        id: 32,
         group: 'E',
         time: labels.time21,
         day: labels.Monday,
@@ -140,7 +140,7 @@ module.exports = [
     date: 15,
     matches: [
       {
-        id: 0,
+        id: 40,
         group: 'F',
         time: labels.time18,
         day: labels.Tuesday,
@@ -151,7 +151,7 @@ module.exports = [
         city: labels.Budapest
       },
       {
-        id: 1,
+        id: 41,
         group: 'F',
         time: labels.time21,
         day: labels.Tuesday,
@@ -168,7 +168,7 @@ module.exports = [
     date: 16,
     matches: [
       {
-        id: 0,
+        id: 50,
         group: 'B',
         time: labels.time15,
         day: labels.Wednesday,
@@ -179,7 +179,7 @@ module.exports = [
         city: labels.Petersburg
       },
       {
-        id: 1,
+        id: 51,
         group: 'A',
         time: labels.time18,
         day: labels.Wednesday,
@@ -190,7 +190,7 @@ module.exports = [
         city: labels.Baku
       },
       {
-        id: 2,
+        id: 52,
         group: 'A',
         time: labels.time21,
         day: labels.Wednesday,
@@ -207,7 +207,7 @@ module.exports = [
     date: 17,
     matches: [
       {
-        id: 0,
+        id: 60,
         group: 'C',
         time: labels.time15,
         day: labels.Thursday,
@@ -218,7 +218,7 @@ module.exports = [
         city: labels.Bucharest
       },
       {
-        id: 1,
+        id: 61,
         group: 'B',
         time: labels.time18,
         day: labels.Thursday,
@@ -229,7 +229,7 @@ module.exports = [
         city: labels.Copenhagen
       },
       {
-        id: 2,
+        id: 62,
         group: 'C',
         time: labels.time21,
         day: labels.Thursday,
@@ -246,7 +246,7 @@ module.exports = [
     date: 18,
     matches: [
       {
-        id: 0,
+        id: 70,
         group: 'E',
         time: labels.time15,
         day: labels.Friday,
@@ -257,7 +257,7 @@ module.exports = [
         city: labels.Petersburg
       },
       {
-        id: 1,
+        id: 71,
         group: 'D',
         date: 18,
         time: labels.time18,
@@ -269,7 +269,7 @@ module.exports = [
         city: labels.Glasgow
       },
       {
-        id: 2,
+        id: 72,
         group: 'D',
         date: 18,
         time: labels.time21,
@@ -287,18 +287,18 @@ module.exports = [
     date: 19,
     matches: [
       {
-        id: 0,
+        id: 80,
         group: 'F',
         time: labels.time15,
         day: labels.Saturday,
         team1: labels.Hungary,
-        score1: '-',
+        score1: 1,
         team2: labels.France,
-        score2: '-',
+        score2: 1,
         city: labels.Budapest
       },
       {
-        id: 1,
+        id: 81,
         group: 'F',
         time: labels.time18,
         day: labels.Saturday,
@@ -309,7 +309,7 @@ module.exports = [
         city: labels.Munich
       },
       {
-        id: 2,
+        id: 82,
         group: 'E',
         time: labels.time21,
         day: labels.Saturday,
@@ -326,7 +326,7 @@ module.exports = [
     date: 20,
     matches: [
       {
-        id: 0,
+        id: 90,
         group: 'A',
         time: labels.time18,
         day: labels.Sunday,
@@ -337,7 +337,7 @@ module.exports = [
         city: labels.Baku
       },
       {
-        id: 1,
+        id: 91,
         group: 'A',
         time: labels.time18,
         day: labels.Sunday,
@@ -354,7 +354,7 @@ module.exports = [
     date: 21,
     matches: [
       {
-        id: 0,
+        id: 100,
         group: 'C',
         time: labels.time18,
         day: labels.Monday,
@@ -365,7 +365,7 @@ module.exports = [
         city: labels.Amsterdam
       },
       {
-        id: 1,
+        id: 101,
         group: 'C',
         time: labels.time18,
         day: labels.Monday,
@@ -376,7 +376,7 @@ module.exports = [
         city: labels.Bucharest
       },
       {
-        id: 2,
+        id: 102,
         group: 'B',
         time: labels.time21,
         day: labels.Monday,
@@ -387,7 +387,7 @@ module.exports = [
         city: labels.Copenhagen
       },
       {
-        id: 3,
+        id: 103,
         group: 'B',
         time: labels.time21,
         day: labels.Monday,
@@ -404,7 +404,7 @@ module.exports = [
     date: 22,
     matches: [
       {
-        id: 0,
+        id: 110,
         group: 'D',
         time: labels.time21,
         day: labels.Tuesday,
@@ -415,7 +415,7 @@ module.exports = [
         city: labels.Glasgow
       },
       {
-        id: 1,
+        id: 111,
         group: 'D',
         time: labels.time21,
         day: labels.Tuesday,
@@ -432,7 +432,7 @@ module.exports = [
     date: 23,
     matches: [
       {
-        id: 0,
+        id: 120,
         group: 'E',
         time: labels.time18,
         day: labels.Wednesday,
@@ -443,7 +443,7 @@ module.exports = [
         city: labels.Seville
       },
       {
-        id: 33,
+        id: 121,
         group: 'E',
         time: labels.time18,
         day: labels.Wednesday,
@@ -454,7 +454,7 @@ module.exports = [
         city: labels.Petersburg
       },
       {
-        id: 2,
+        id: 122,
         group: 'F',
         time: labels.time21,
         day: labels.Wednesday,
@@ -465,7 +465,7 @@ module.exports = [
         city: labels.Budapest
       },
       {
-        id: 3,
+        id: 123,
         group: 'F',
         time: labels.time21,
         day: labels.Wednesday,
