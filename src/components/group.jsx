@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { statusType } from '../constants';
 import { getFixtures, getGroups } from '../actions/index';
+import Match from './match';
 import colorSwitch from './colorSwitch';
 
 const positions = [
@@ -33,7 +34,6 @@ const Groups = ({ getFixtures, fixtures, getGroups, groups }) => {
       <Row className="frame">
         {groups.map((team) => {
           const groupName = team.group;
-          const utc = ' (UTC)';
           let groupMatches = fixtures
             .filter((elements) =>
               elements.matches.some((match) => match.group === groupName)
@@ -87,23 +87,7 @@ const Groups = ({ getFixtures, fixtures, getGroups, groups }) => {
                 <Card.Body>
                   <Card.Title>
                     {groupMatches.flat().map((match) => (
-                      <div key={match.id}>
-                        <Row>
-                          <Col className="card__match--left" xs={5}>
-                            {match.team1}
-                          </Col>
-                          <Col xs={2}>
-                            {match.score1}:{match.score2}
-                          </Col>
-                          <Col className="card__match--right" xs={5}>
-                            {match.team2}
-                          </Col>
-                        </Row>
-                        <Card.Text className="labels__header card__teams--gap">
-                          <span>{match.city} </span>
-                          {match.time} {utc}
-                        </Card.Text>
-                      </div>
+                      <Match key={match.id} match={match} />
                     ))}
                   </Card.Title>
                   <div className="card__border card__border--group" />

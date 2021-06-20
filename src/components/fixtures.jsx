@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { statusType } from '../constants';
 import { getFixtures } from '../actions';
+import Match from './match';
 import colorSwitch from './colorSwitch';
 
 const Fixtures = ({ getFixtures, fixtures }) => {
@@ -21,7 +22,6 @@ const Fixtures = ({ getFixtures, fixtures }) => {
       <Row>
         {fixtures.map((match) => {
           const dayJune = 'th June';
-          const utc = ' (UTC)';
           const cardHeader = (
             <Card.Header>
               {match.day} {match.date}
@@ -33,6 +33,7 @@ const Fixtures = ({ getFixtures, fixtures }) => {
           previousDate = match.date;
           colorCounter >= colorSwitch.length && (colorCounter = 0);
           const bgColor = colorSwitch[colorCounter];
+
           return (
             <Col
               xs={12}
@@ -51,23 +52,7 @@ const Fixtures = ({ getFixtures, fixtures }) => {
                 <Card.Body>
                   <Card.Title>
                     {match.matches.map((match) => (
-                      <div key={match.id}>
-                        <Row>
-                          <Col className="card__match--left" xs={5}>
-                            {match.team1}
-                          </Col>
-                          <Col xs={2}>
-                            {match.score1}:{match.score2}
-                          </Col>
-                          <Col className="card__match--right" xs={5}>
-                            {match.team2}
-                          </Col>
-                        </Row>
-                        <Card.Text className="labels__header card__teams--gap">
-                          <span>{match.city} </span>
-                          {match.time} {utc}
-                        </Card.Text>
-                      </div>
+                      <Match key={match.id} match={match} />
                     ))}
                   </Card.Title>
                   <div className="card__border" />
