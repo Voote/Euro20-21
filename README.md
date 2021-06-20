@@ -24,6 +24,14 @@ Open [http://localhost:3000](http://localhost:3000) (with API [http://localhost:
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+### `npm run start-3001`
+
+Runs the app in the development mode.\
+Opens app directly on port [http://localhost:3001](http://localhost:3001)
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
 ## Authors:
 
 ### Jakub Krzywanski and Artur Garlej

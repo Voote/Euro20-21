@@ -10,6 +10,9 @@ $darkCard: #343a40;
 $antySecondary: #79c68f;
 $antySunny: #136cde;
 $antyPrimary: #f0634e;
+$cornerRadius: 50px;
+$tinLane: 0.1em;
+$thickLane: 0.2em;
 
 html,
 body {
@@ -105,7 +108,7 @@ a {
     min-width: 290px;
     max-width: 340px;
     margin: 0rem 5vw -2em 5vw;
-    border-radius: 50px;
+    border-radius: $cornerRadius;
     padding-top: 0.5em;
     &--header {
       font-weight: 500;
@@ -118,7 +121,7 @@ a {
     min-width: 290px;
     max-width: 340px;
     margin: 0rem 5vw -17rem 5vw;
-    border-radius: 50px 50px 0px 0px;
+    border-radius: $cornerRadius $cornerRadius 0px 0px;
     padding-bottom: 2rem;
     &--left {
       padding-right: 0px;
@@ -150,9 +153,9 @@ a {
 .navigation {
   padding: 0.7em;
   background-color: $darkCard;
-  border-bottom: 0.1rem outset black;
-  border-right: 1px outset black;
-  border-radius: 0px 0px 50px 50px;
+  border-bottom: 0.1em outset black;
+  border-right: 0.2em outset black;
+  border-radius: 0px 0px $cornerRadius $cornerRadius;
   .card {
     display: inline-block;
     background-color: $darkCard;
