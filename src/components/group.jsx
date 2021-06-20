@@ -21,7 +21,6 @@ const Groups = ({ getFixtures, fixtures, getGroups, groups }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // console.log(fixtures);
   const headerText = 'Group View';
   const groupHeader = 'GROUP ';
   let num = 0;
@@ -34,7 +33,7 @@ const Groups = ({ getFixtures, fixtures, getGroups, groups }) => {
       <Row className="frame">
         {groups.map((team) => {
           const groupName = team.group;
-
+          const utc = ' (UTC)';
           let groupMatches = fixtures
             .filter((elements) =>
               elements.matches.some((match) => match.group === groupName)
@@ -45,21 +44,15 @@ const Groups = ({ getFixtures, fixtures, getGroups, groups }) => {
                 (match) => match.group === groupName
               );
             });
-          const groupMatchesFlat = groupMatches.flat();
 
-          console.log(groupMatchesFlat);
-
-          const utc = ' (UTC)';
+          const points = (item) => item.round1 + item.round2 + item.round3;
+          const sortedArray = team.teams.sort((a, b) => points(b) - points(a));
           const bgColor = colorSwitch[colorCounter];
           const bgColor2 = colorSwitch[colorCounter2];
-          // console.log('color1: ', colorCounter, 'color2: ', colorCounter2);
           colorCounter++;
           colorCounter2++;
           colorCounter >= colorSwitch.length && (colorCounter = 0);
           colorCounter2 >= colorSwitch.length && (colorCounter2 = 0);
-
-          const points = (item) => item.round1 + item.round2 + item.round3;
-          const sortedArray = team.teams.sort((a, b) => points(b) - points(a));
 
           return (
             <Col xs={12} md={6} xl={4} key={team.id}>
@@ -93,7 +86,7 @@ const Groups = ({ getFixtures, fixtures, getGroups, groups }) => {
               <Card bg={bgColor2} text="dark" className="card__group">
                 <Card.Body>
                   <Card.Title>
-                    {groupMatchesFlat.map((match) => (
+                    {groupMatches.flat().map((match) => (
                       <div key={match.id}>
                         <Row>
                           <Col className="card__match--left" xs={5}>
