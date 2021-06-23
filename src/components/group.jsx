@@ -46,7 +46,18 @@ const Groups = ({ getFixtures, fixtures, getGroups, groups }) => {
             });
 
           const points = (item) => item.round1 + item.round2 + item.round3;
-          const sortedArray = team.teams.sort((a, b) => points(b) - points(a));
+          const goals = (item) =>
+            item.goals1scored +
+            item.goals2scored +
+            item.goals3scored -
+            item.goals1lost -
+            item.goals2lost -
+            item.goals3lost;
+          const sortedArray = team.teams.sort(
+            (a, b) =>
+              (points(b) !== points(a) && points(b) - points(a)) ||
+              goals(b) - goals(a)
+          );
           const bgColor = colorSwitch[colorCounter];
           const bgColor2 = colorSwitch[colorCounter2];
           colorCounter++;

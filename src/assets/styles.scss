@@ -96,11 +96,11 @@ a {
   &__border {
     margin: -1em 2.5em 14.2em 2.5em;
     border-radius: 40%;
-    border-top: 0.2em double $primary;
+    border-top: $thickLane double $primary;
     text-align: center;
     &--group {
       padding-top: 0.6rem;
-      margin: 0.1em 2em;
+      margin: $tinLane 2em;
     }
   }
 
@@ -133,7 +133,7 @@ a {
 
   &__teams {
     &--gap {
-      padding-top: 0.2em;
+      padding-top: $thickLane;
       padding-bottom: 5vh;
     }
     .card-body {
@@ -153,8 +153,8 @@ a {
 .navigation {
   padding: 0.7em;
   background-color: $darkCard;
-  border-bottom: 0.1em outset black;
-  border-right: 0.2em outset black;
+  border-bottom: $tinLane outset black;
+  border-right: $thickLane outset black;
   border-radius: 0px 0px $cornerRadius $cornerRadius;
   .card {
     display: inline-block;
