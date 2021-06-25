@@ -12,9 +12,9 @@ const Nav = () => (
       <Link to="group">
         <Button variant="secondary">{labels.Groups}</Button>
       </Link>
-      <Button variant="danger" disabled>
-        {labels.Knockout}
-      </Button>
+      <Link to="/tree">
+        <Button variant="danger">{labels.Knockout}</Button>
+      </Link>
     </Card>
   </div>
 );

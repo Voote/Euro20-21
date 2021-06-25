@@ -140,6 +140,30 @@ a {
       padding: 1em 0.4rem;
     }
   }
+
+  &__r16 {
+    margin-top: 2em;
+    margin-bottom: 4em;
+    padding: 2em 0em;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--type0 {
+      border-radius: 0px 0px 0px 50px;
+      margin-bottom: 4rem;
+    }
+    &--type1 {
+      border-radius: 0px 0px 50px 0px;
+    }
+    &--type2 {
+      border-radius: 50px 0px 0px 0px;
+      margin-bottom: none;
+    }
+    &--type3 {
+      border-radius: 0px 50px 0px 0px;
+    }
+  }
 }
 
 .labels {

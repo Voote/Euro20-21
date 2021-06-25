@@ -256,7 +256,7 @@ module.exports = [
       {
         id: 0,
         name: labels.Poland,
-        matches: 2,
+        matches: 3,
         round1: 0,
         goals1scored: 1,
         goals1lost: 2,
@@ -264,13 +264,13 @@ module.exports = [
         goals2scored: 1,
         goals2lost: 1,
         round3: 0,
-        goals3scored: 0,
-        goals3lost: 0
+        goals3scored: 2,
+        goals3lost: 3
       },
       {
         id: 1,
         name: labels.Slovakia,
-        matches: 2,
+        matches: 3,
         round1: 3,
         goals1scored: 2,
         goals1lost: 1,
@@ -279,35 +279,35 @@ module.exports = [
         goals2lost: 1,
         round3: 0,
         goals3scored: 0,
-        goals3lost: 0
+        goals3lost: 5
       },
       {
         id: 2,
         name: labels.Spain,
-        matches: 2,
+        matches: 3,
         round1: 1,
         goals1scored: 0,
         goals1lost: 0,
         round2: 1,
         goals2scored: 1,
         goals2lost: 1,
-        round3: 0,
-        goals3scored: 0,
+        round3: 3,
+        goals3scored: 5,
         goals3lost: 0
       },
       {
         id: 3,
         name: labels.Sweden,
-        matches: 2,
+        matches: 3,
         round1: 1,
         goals1scored: 0,
         goals1lost: 0,
         round2: 3,
         goals2scored: 1,
         goals2lost: 0,
-        round3: 0,
-        goals3scored: 0,
-        goals3lost: 0
+        round3: 3,
+        goals3scored: 3,
+        goals3lost: 2
       }
     ]
   },
@@ -318,58 +318,58 @@ module.exports = [
       {
         id: 0,
         name: labels.France,
-        matches: 2,
+        matches: 3,
         round1: 3,
         goals1scored: 1,
         goals1lost: 0,
         round2: 1,
         goals2scored: 1,
         goals2lost: 1,
-        round3: 0,
-        goals3scored: 0,
-        goals3lost: 0
+        round3: 1,
+        goals3scored: 2,
+        goals3lost: 2
       },
       {
         id: 1,
         name: labels.Germany,
-        matches: 2,
+        matches: 3,
         round1: 0,
         goals1scored: 0,
         goals1lost: 1,
         round2: 3,
         goals2scored: 4,
         goals2lost: 2,
-        round3: 0,
-        goals3scored: 0,
-        goals3lost: 0
+        round3: 1,
+        goals3scored: 2,
+        goals3lost: 2
       },
       {
         id: 2,
         name: labels.Hungary,
-        matches: 2,
+        matches: 3,
         round1: 0,
         goals1scored: 0,
         goals1lost: 3,
         round2: 1,
         goals2scored: 1,
         goals2lost: 1,
-        round3: 0,
-        goals3scored: 0,
-        goals3lost: 0
+        round3: 1,
+        goals3scored: 2,
+        goals3lost: 2
       },
       {
         id: 3,
         name: labels.Portugal,
-        matches: 2,
+        matches: 3,
         round1: 3,
         goals1scored: 3,
         goals1lost: 0,
         round2: 0,
         goals2scored: 2,
         goals2lost: 4,
-        round3: 0,
-        goals3scored: 0,
-        goals3lost: 0
+        round3: 1,
+        goals3scored: 2,
+        goals3lost: 2
       }
     ]
   }

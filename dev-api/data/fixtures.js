@@ -417,9 +417,9 @@ module.exports = [
         group: 'E',
         time: labels.time18,
         team1: labels.Slovakia,
-        score1: '-',
+        score1: 0,
         team2: labels.Spain,
-        score2: '-',
+        score2: 5,
         city: labels.Seville
       },
       {
@@ -427,9 +427,9 @@ module.exports = [
         group: 'E',
         time: labels.time18,
         team1: labels.Sweden,
-        score1: '-',
+        score1: 3,
         team2: labels.Poland,
-        score2: '-',
+        score2: 2,
         city: labels.Petersburg
       },
       {
@@ -437,9 +437,9 @@ module.exports = [
         group: 'F',
         time: labels.time21,
         team1: labels.Portugal,
-        score1: '-',
+        score1: 2,
         team2: labels.France,
-        score2: '-',
+        score2: 2,
         city: labels.Budapest
       },
       {
@@ -447,9 +447,9 @@ module.exports = [
         group: 'F',
         time: labels.time21,
         team1: labels.Germany,
-        score1: '-',
+        score1: 2,
         team2: labels.Hungary,
-        score2: '-',
+        score2: 2,
         city: labels.Munich
       }
     ]

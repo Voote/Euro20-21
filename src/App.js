@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './components/nav';
 import Group from './components/group';
 import Fixtures from './components/fixtures';
+import Tree from './components/tree';
 
 const App = () => (
   <div className="App">
@@ -23,6 +24,11 @@ const App = () => (
         <Route path="/fixtures">
           <section>
             <Fixtures />
+          </section>
+        </Route>
+        <Route path="/tree">
+          <section>
+            <Tree />
           </section>
         </Route>
       </Switch>
