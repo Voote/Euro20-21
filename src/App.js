@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './components/nav';
 import Group from './components/group';
 import Fixtures from './components/fixtures';
-import Tree from './components/tree';
+import TreeLinear from './components/treeLinear';
 
 const App = () => (
   <div className="App">
@@ -28,7 +28,7 @@ const App = () => (
         </Route>
         <Route path="/tree">
           <section>
-            <Tree />
+            <TreeLinear />
           </section>
         </Route>
       </Switch>

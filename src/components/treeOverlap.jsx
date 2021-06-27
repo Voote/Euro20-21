@@ -7,7 +7,7 @@ import { statusType } from '../constants';
 import { getTree } from '../actions';
 import colorSwitch from './colorSwitch';
 
-const Tree = ({ getTree, tree }) => {
+const TreeOverlap = ({ getTree, tree }) => {
   useEffect(() => {
     getTree();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -30,12 +30,14 @@ const Tree = ({ getTree, tree }) => {
     <Container fluid>
       <Row>
         {matchesOf16.map((item) => {
-          console.log(item.id % 4, item.goals1);
-          const cardType = `card__r16 card__r16--type${item.id % 4}`;
+          console.log(item.id % 2, item.name);
+
+          const cardType = `card__r16 card__r16--type${
+            item.id % 4
+          } card__r16--block`;
           const random = Math.floor(Math.random() * 2);
           const reset = () =>
             colorCounter >= colorSwitch.length && (colorCounter = 0);
-
           colorCounter += random;
           reset();
           oldCounter === colorCounter && (colorCounter += 1);
@@ -44,9 +46,8 @@ const Tree = ({ getTree, tree }) => {
           oldCounter = colorCounter;
           colorCounter++;
           reset();
-
-          return (
-            <Col xs={6} key={item.id}>
+          const colRight = (
+            <Col xs={5} key={item.id}>
               <Card bg={bgColor} className={cardType}>
                 <Card.Title>
                   <Row>
@@ -64,6 +65,35 @@ const Tree = ({ getTree, tree }) => {
               </Card>
             </Col>
           );
+          const colLeft = (
+            <Col xs={7} key={item.id}>
+              <Row>
+                <Col xs={9}>
+                  <Card bg={bgColor} className={cardType}>
+                    <Card.Title>
+                      <Row>
+                        <Col xs={12} md={5}>
+                          {item.team1}
+                        </Col>
+                        <Col>
+                          {item.goals1} : {item.goals2}
+                        </Col>
+                        <Col xs={12} md={5}>
+                          {item.team2}
+                        </Col>
+                      </Row>
+                    </Card.Title>
+                  </Card>
+                </Col>
+                <Col xs={3}>
+                  <p style={{ marginTop: '5em' }}> VS </p>
+                </Col>
+              </Row>
+            </Col>
+          );
+          const isRight = item.id % 2 ? colRight : colLeft;
+
+          return isRight;
         })}
         <Col xs={0} md={1} />
       </Row>
@@ -80,15 +110,15 @@ const mapDispatchToProps = (dispatch) => ({
   getTree: () => dispatch(getTree())
 });
 
-Tree.defaultProps = {
+TreeOverlap.defaultProps = {
   tree: [],
   isTreeLoading: false
 };
 
-Tree.propTypes = {
+TreeOverlap.propTypes = {
   fixtures: PropTypes.array,
   isTreeLoading: PropTypes.bool,
   getTree: PropTypes.func.isRequired
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Tree);
+export default connect(mapStateToProps, mapDispatchToProps)(TreeOverlap);

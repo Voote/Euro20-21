@@ -62,10 +62,6 @@ body {
   padding: 0;
 }
 
-.card-header {
-  background-color: rgba(0, 0, 0, 0);
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -78,6 +74,10 @@ a {
   }
 }
 
+.card-header {
+  background-color: rgba(0, 0, 0, 0);
+}
+
 .frame {
   .card {
     border-top: 0.1rem outset black;
@@ -87,6 +87,13 @@ a {
     .card {
       border-top-color: $darkBlue;
       border-left: none;
+    }
+  }
+  &--both {
+    .card {
+      border-top: 0.1rem outset black;
+      border-left: 1px outset black;
+      border-right: 1px outset black;
     }
   }
 }
@@ -141,27 +148,37 @@ a {
     }
   }
 
+  &__knockout {
+    min-width: 290px;
+    max-width: 340px;
+    min-height: 180px;
+    padding-top: 1em;
+    margin: 0rem 5vw -1.5em 5vw;
+    border-radius: $cornerRadius;
+  }
+
   &__r16 {
-    margin-top: 2em;
-    margin-bottom: 4em;
-    padding: 2em 0em;
+    margin: 2em auto 4em auto;
+    padding-top: 2.4em;
     max-width: 450px;
-    margin-left: auto;
-    margin-right: auto;
+    min-height: 155px;
 
     &--type0 {
-      border-radius: 0px 0px 0px 50px;
+      border-radius: 0px 0px 0px $cornerRadius;
       margin-bottom: 4rem;
+      padding-top: 2.6em;
+      min-height: 150px;
     }
     &--type1 {
-      border-radius: 0px 0px 50px 0px;
+      border-radius: 0px 0px $cornerRadius 0px;
+      padding-top: 2.6em;
+      min-height: 150px;
     }
     &--type2 {
-      border-radius: 50px 0px 0px 0px;
-      margin-bottom: none;
+      border-radius: $cornerRadius 0px 0px 0px;
     }
     &--type3 {
-      border-radius: 0px 50px 0px 0px;
+      border-radius: 0px $cornerRadius 0px 0px;
     }
   }
 }
