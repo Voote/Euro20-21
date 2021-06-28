@@ -2,8 +2,8 @@ import {
   GET_GROUPS,
   GET_GROUPS_ERROR,
   GET_GROUPS_SUCCESS
-} from './../actions/actionTypes';
-import { statusType } from './../constants';
+} from '../actions/actionTypes';
+import { statusType } from '../constants';
 
 const initialState = {
   data: [],
