@@ -24,7 +24,7 @@ module.exports = [
         team2: labels.Austria,
         score1: 2,
         score2: 1,
-        winner: 2,
+        winner: 1,
         date: 26,
         time: labels.time21,
         day: labels.Saturday
@@ -34,9 +34,9 @@ module.exports = [
         name: 'M3',
         team1: labels.Netherlands,
         team2: labels.Czech,
-        score1: '-',
-        score2: '-',
-        winner: 0,
+        score1: 0,
+        score2: 2,
+        winner: 2,
         date: 27,
         time: labels.time18,
         day: labels.Sunday
@@ -46,9 +46,9 @@ module.exports = [
         name: 'M4',
         team1: labels.Belgium,
         team2: labels.Portugal,
-        score1: '-',
-        score2: '-',
-        winner: 0,
+        score1: 1,
+        score2: 0,
+        winner: 1,
         date: 27,
         time: labels.time21,
         day: labels.Sunday
@@ -58,9 +58,9 @@ module.exports = [
         name: 'M5',
         team1: labels.Croatia,
         team2: labels.Spain,
-        score1: '-',
-        score2: '-',
-        winner: 0,
+        score1: 3,
+        score2: 5,
+        winner: 2,
         date: 28,
         time: labels.time18,
         day: labels.Monday
@@ -70,9 +70,9 @@ module.exports = [
         name: 'M6',
         team1: labels.France,
         team2: labels.Switzerland,
-        score1: '-',
-        score2: '-',
-        winner: 0,
+        score1: 7,
+        score2: 8,
+        winner: 2,
         date: 28,
         time: labels.time21,
         day: labels.Monday
@@ -82,9 +82,9 @@ module.exports = [
         name: 'M7',
         team1: labels.England,
         team2: labels.Germany,
-        score1: '-',
-        score2: '-',
-        winner: 0,
+        score1: 2,
+        score2: 0,
+        winner: 1,
         date: 29,
         time: labels.time18,
         day: labels.Tuesday
@@ -94,9 +94,9 @@ module.exports = [
         name: 'M8',
         team1: labels.Sweden,
         team2: labels.Ukraine,
-        score1: '-',
-        score2: '-',
-        winner: 0,
+        score1: 1,
+        score2: 2,
+        winner: 2,
         date: 29,
         time: labels.time21,
         day: labels.Tuesday
@@ -110,38 +110,50 @@ module.exports = [
       {
         id: 20,
         name: 'QF1',
+        date: 2,
         team1: 'M6',
         team2: 'M5',
-        score1: '-',
-        score2: '-',
-        winner: 0
+        score1: 2,
+        score2: 4,
+        winner: 2,
+        time: labels.time18,
+        day: labels.Friday
       },
       {
         id: 21,
         name: 'QF2',
+        date: 2,
         team1: 'M4',
         team2: 'M2',
-        score1: '-',
-        score2: '-',
-        winner: 0
+        score1: 1,
+        score2: 2,
+        winner: 2,
+        time: labels.time21,
+        day: labels.Friday
       },
       {
         id: 22,
         name: 'QF3',
+        date: 3,
         team1: 'M3',
         team2: 'M1',
-        score1: '-',
-        score2: '-',
-        winner: 0
+        score1: 1,
+        score2: 2,
+        winner: 2,
+        time: labels.time18,
+        day: labels.Saturday
       },
       {
         id: 23,
         name: 'QF4',
+        date: 3,
         team1: 'M8',
         team2: 'M7',
-        score1: '-',
-        score2: '-',
-        winner: 0
+        score1: 0,
+        score2: 4,
+        winner: 2,
+        time: labels.time21,
+        day: labels.Saturday
       }
     ]
   },
@@ -152,20 +164,26 @@ module.exports = [
       {
         id: 30,
         name: 'SF1',
+        date: 6,
         team1: 'QF2',
         team2: 'QF1',
         score1: '-',
         score2: '-',
-        winner: 0
+        winner: 0,
+        time: labels.time21,
+        day: labels.Tuesday
       },
       {
         id: 31,
         name: 'SF2',
+        date: 7,
         team1: 'QF4',
         team2: 'QF3',
         score1: '-',
         score2: '-',
-        winner: 0
+        winner: 0,
+        time: labels.time21,
+        day: labels.Wednesday
       }
     ]
   },
@@ -177,6 +195,8 @@ module.exports = [
     team2: 'SF2',
     score1: '-',
     score2: '-',
-    winner: 0
+    winner: 0,
+    time: labels.time21,
+    day: labels.Sunday
   }
 ];

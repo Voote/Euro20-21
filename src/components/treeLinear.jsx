@@ -16,20 +16,23 @@ const TreeLinear = ({ getTree, tree }) => {
 
   let colorCounter = 0;
   let oldCounter = 4;
+  const dayOfJune = 'th June';
+  const secondJuly = 'nd July';
+  const thirdJuly = 'rd July';
+  const dayOfJuly = 'th July';
 
   const stage = (point) => tree.filter((round) => round.id === point);
-  const roundOf16 = stage(1).flat();
-  //   const quaterFinals = stage(2);
+  const roundOf16 = stage(1);
+  const quaterFinals = stage(2);
   //   const semiFinals = stage(3);
   //   const final = stage(4);
-  const matchesOf16 = roundOf16.map((element) => element.matches).flat();
+  const matchesOf16 = roundOf16.map((m16) => m16.matches).flat();
+  const matchesQuaterFinal = quaterFinals.map((mQF) => mQF.matches).flat();
 
   return (
     <Container fluid>
       <Row>
         {matchesOf16.map((match) => {
-          console.log(match.id % 2, match.name);
-
           const random = Math.floor(Math.random() * 2);
           const reset = () =>
             colorCounter >= colorSwitch.length && (colorCounter = 0);
@@ -50,7 +53,8 @@ const TreeLinear = ({ getTree, tree }) => {
                 className="card__knockout card__teams"
               >
                 <Card.Header>
-                  {match.day} {match.date}th June
+                  {match.day} {match.date}
+                  {dayOfJune}
                 </Card.Header>
                 <Card.Title>
                   <Match key={match.id} match={match} />
@@ -60,6 +64,57 @@ const TreeLinear = ({ getTree, tree }) => {
           );
         })}
       </Row>
+
+      <Row className="App App__section">
+        <header style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+          <h1>Quater Finals</h1>
+        </header>
+
+        {matchesQuaterFinal.map((match) => {
+          oldCounter === colorCounter && (colorCounter += 1);
+          colorCounter >= colorSwitch.length && (colorCounter = 0);
+          const bgColor = colorSwitch[colorCounter];
+          oldCounter = colorCounter;
+          colorCounter++;
+
+          const primeDate =
+            (match.date === 2 && `${match.day} ${match.date}${secondJuly}`) ||
+            (match.date === 3 && `${match.day} ${match.date}${thirdJuly}`) ||
+            console.log('Wrong match date');
+
+          const matchArray = (team) =>
+            matchesOf16.filter((matchOf16) => matchOf16.name === team);
+          const winner = (filtredMatch) =>
+            (filtredMatch.winner === 1 && filtredMatch.team1) ||
+            filtredMatch.team2;
+          const match1Array = matchArray(match.team1);
+          const match2Array = matchArray(match.team2);
+          const winner1 = winner(match1Array[0]);
+          const winner2 = winner(match2Array[0]);
+
+          return (
+            <Col xs={12} md={6} lg={4} key={match.id} className="frame--both">
+              <Card
+                bg={bgColor}
+                text="dark"
+                className="card__knockout card__teams"
+              >
+                <Card.Header>{primeDate}</Card.Header>
+                <Card.Title>
+                  <Match
+                    key={match.id}
+                    match={match}
+                    team1={winner1}
+                    team2={winner2}
+                  />
+                </Card.Title>
+              </Card>
+            </Col>
+          );
+        })}
+      </Row>
+
+      <Row></Row>
     </Container>
   );
 };
