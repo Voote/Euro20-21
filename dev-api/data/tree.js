@@ -167,9 +167,9 @@ module.exports = [
         date: 6,
         team1: 'QF2',
         team2: 'QF1',
-        score1: '-',
-        score2: '-',
-        winner: 0,
+        score1: 5,
+        score2: 3,
+        winner: 1,
         time: labels.time21,
         day: labels.Tuesday
       },
@@ -179,9 +179,9 @@ module.exports = [
         date: 7,
         team1: 'QF4',
         team2: 'QF3',
-        score1: '-',
-        score2: '-',
-        winner: 0,
+        score1: 2,
+        score2: 1,
+        winner: 1,
         time: labels.time21,
         day: labels.Wednesday
       }
@@ -193,8 +193,8 @@ module.exports = [
     date: 11,
     team1: 'SF1',
     team2: 'SF2',
-    score1: '-',
-    score2: '-',
+    score1: 4,
+    score2: 3,
     winner: 0,
     time: labels.time21,
     day: labels.Sunday

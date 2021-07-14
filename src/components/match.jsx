@@ -4,7 +4,6 @@ import { Card, Col, Row } from 'react-bootstrap';
 const Match = ({ match, team1, team2 }) => {
   const firstTeam = team1 || match.team1;
   const secondTeam = team2 || match.team2;
-  console.log(firstTeam, secondTeam);
   return (
     <div>
       <Row>
