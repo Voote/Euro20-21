@@ -210,3 +210,13 @@ a {
     border-radius: 0.5rem;
   }
 }
+
+@media (min-width: 36rem) {
+  .card {
+    &__knockout {
+      min-height: 200px;
+      max-width: 540px;
+      margin: 0rem 0vw -1.5em 0vw;
+    }
+  }
+}

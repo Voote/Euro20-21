@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Euro 2020 (2021) unofficial Webpage of result
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project status
+
+This project is currently in development. Visitors can check actual fixtures without cookies or other trackers. There are few bugs to be fix.
+
+> Still required:
+>
+> - array refresh after reading it's value (Tree Section)
+>
+> - tests
 
 ## Available Scripts
 

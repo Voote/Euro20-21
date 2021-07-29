@@ -10,3 +10,4 @@ export const GET_TEAMS_SUCCESS = 'GET_TEAMS_SUCCESS';
 export const GET_TREE = 'GET_TREE';
 export const GET_TREE_ERROR = 'GET_TREE_ERROR';
 export const GET_TREE_SUCCESS = 'GET_TREE_SUCCESS';
+export const SET_ARRAY = 'SET_ARRAY';

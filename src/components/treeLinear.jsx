@@ -7,8 +7,12 @@ import { statusType } from '../constants';
 import { getTree } from '../actions';
 import Match from './match';
 import colorSwitch from './colorSwitch';
+import LinearLoader from './Loading/linear-loader';
+import PotionLoader from './Loading/potion-loader';
 
-const TreeLinear = ({ getTree, tree }) => {
+const TreeLinear = ({ getTree, tree, isTreeLoading }) => {
+  const checkLoading = isTreeLoading;
+
   useEffect(() => {
     getTree();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -16,6 +20,7 @@ const TreeLinear = ({ getTree, tree }) => {
 
   let colorCounter = 0;
   let oldCounter = 4;
+  let bgColor = '';
   const dayOfJune = 'th June';
   const secondJuly = 'nd July';
   const thirdJuly = 'rd July';
@@ -25,36 +30,42 @@ const TreeLinear = ({ getTree, tree }) => {
   const roundOf16 = stage(1);
   const quaterFinals = stage(2);
   const semiFinals = stage(3);
-  //   const final = stage(4);
+  const final = stage(4);
   const matchesOf16 = roundOf16.map((m16) => m16.matches).flat();
   const matchesQuaterFinal = quaterFinals.map((mQF) => mQF.matches).flat();
   const matchesSemiFinal = semiFinals.map((mSF) => mSF.matches).flat();
+  const matchOfFinal = final.map((mF) => mF.matches).flat();
   const reset = () => colorCounter >= colorSwitch.length && (colorCounter = 0);
   const overwriteWinners = (firstObj, secondObj, arrObj) => {
     (firstObj.winner === 1 && (firstObj.winner = firstObj.team1)) ||
       (firstObj.winner === 2 && (firstObj.winner = firstObj.team2));
     (secondObj.winner === 1 && (secondObj.winner = secondObj.team1)) ||
       (secondObj.winner === 2 && (secondObj.winner = secondObj.team2));
-    // arrObj.team1 = firstObj.winner;
-    // arrObj.team2 = secondObj.winner;
+    arrObj.team1 = firstObj.winner;
+    arrObj.team2 = secondObj.winner;
+  };
+  const colorPicker = () => {
+    oldCounter === colorCounter && (colorCounter += 1);
+    reset();
+    bgColor = colorSwitch[colorCounter];
+    oldCounter = colorCounter;
+    colorCounter++;
   };
 
-  return (
+  return checkLoading ? (
+    <LinearLoader />
+  ) : (
     <Container fluid>
       <Row>
         {matchesOf16.map((match) => {
           const random = Math.floor(Math.random() * 2);
           colorCounter += random;
           reset();
-          oldCounter === colorCounter && (colorCounter += 1);
-          reset();
-          const bgColor = colorSwitch[colorCounter];
-          oldCounter = colorCounter;
-          colorCounter++;
+          colorPicker();
           reset();
 
           return (
-            <Col xs={12} md={6} lg={4} key={match.id} className="frame--both">
+            <Col xs={12} md={6} lg={3} key={match.id} className="frame--both">
               <Card
                 bg={bgColor}
                 text="dark"
@@ -72,18 +83,12 @@ const TreeLinear = ({ getTree, tree }) => {
           );
         })}
       </Row>
-
+      <header style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+        <h1>Quater Finals</h1>
+      </header>
       <Row className="App App__section">
-        <header style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-          <h1>Quater Finals</h1>
-        </header>
-
         {matchesQuaterFinal.map((match) => {
-          oldCounter === colorCounter && (colorCounter += 1);
-          reset();
-          const bgColor = colorSwitch[colorCounter];
-          oldCounter = colorCounter;
-          colorCounter++;
+          colorPicker();
           const primeDate =
             (match.date === 2 && `${match.day} ${match.date}${secondJuly}`) ||
             (match.date === 3 && `${match.day} ${match.date}${thirdJuly}`) ||
@@ -97,12 +102,10 @@ const TreeLinear = ({ getTree, tree }) => {
             filtredMatch.team2;
           const winner1 = winner(match1Array[0]);
           const winner2 = winner(match2Array[0]);
-          overwriteWinners(match1Array[0], match2Array[0]);
-          match.team1 = match1Array[0].winner;
-          match.team2 = match2Array[0].winner;
+          overwriteWinners(match1Array[0], match2Array[0], match);
 
           return (
-            <Col xs={12} md={6} lg={4} key={match.id} className="frame--both">
+            <Col xs={12} md={6} lg={3} key={match.id} className="frame--both">
               <Card
                 bg={bgColor}
                 text="dark"
@@ -122,27 +125,50 @@ const TreeLinear = ({ getTree, tree }) => {
           );
         })}
       </Row>
-
+      <header style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+        <h1>Semi Finals</h1>
+      </header>
       <Row className="App App__section">
-        <header style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-          <h1>Semi Finals</h1>
-        </header>
+        <Col xs={0} md={0} lg={3} />
         {matchesSemiFinal.map((match) => {
-          oldCounter === colorCounter && (colorCounter += 1);
-          reset();
-          const bgColor = colorSwitch[colorCounter];
-          oldCounter = colorCounter;
-          colorCounter++;
-
+          colorPicker();
           const matchArray = (team) =>
             matchesQuaterFinal.filter((matchQF) => matchQF.name === team);
           const match1Array = matchArray(match.team1);
           const match2Array = matchArray(match.team2);
-          overwriteWinners(match1Array[0], match2Array[0]);
-          match.team1 = match1Array[0].winner;
-          match.team2 = match2Array[0].winner;
+          overwriteWinners(match1Array[0], match2Array[0], match);
 
-          console.log(matchesSemiFinal);
+          return (
+            <Col xs={12} md={6} lg={3} key={match.id} className="frame--both">
+              <Card
+                bg={bgColor}
+                text="dark"
+                className="card__knockout card__teams"
+              >
+                <Card.Header>
+                  {match.day} {match.date}
+                  {dayOfJuly}
+                </Card.Header>
+                <Card.Title>
+                  <Match key={match.id} match={match} />
+                </Card.Title>
+              </Card>
+            </Col>
+          );
+        })}
+      </Row>
+      <header style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+        <h1>Final</h1>
+      </header>
+      <Row className="App App__section">
+        <Col xs={0} md={3} lg={4} />
+        {matchOfFinal.map((match) => {
+          colorPicker();
+          const matchArray = (team) =>
+            matchesSemiFinal.filter((matchQF) => matchQF.name === team);
+          const match1Array = matchArray(match.team1);
+          const match2Array = matchArray(match.team2);
+          overwriteWinners(match1Array[0], match2Array[0], match);
 
           return (
             <Col xs={12} md={6} lg={4} key={match.id} className="frame--both">
@@ -162,6 +188,7 @@ const TreeLinear = ({ getTree, tree }) => {
             </Col>
           );
         })}
+        <Col xs={0} md={0} lg={4} />
       </Row>
     </Container>
   );

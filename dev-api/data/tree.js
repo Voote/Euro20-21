@@ -190,13 +190,18 @@ module.exports = [
   {
     id: 4,
     name: 'Final',
-    date: 11,
-    team1: 'SF1',
-    team2: 'SF2',
-    score1: 4,
-    score2: 3,
-    winner: 0,
-    time: labels.time21,
-    day: labels.Sunday
+    matches: [
+      {
+        id: 40,
+        date: 11,
+        team1: 'SF1',
+        team2: 'SF2',
+        score1: 4,
+        score2: 3,
+        winner: 0,
+        time: labels.time21,
+        day: labels.Sunday
+      }
+    ]
   }
 ];
