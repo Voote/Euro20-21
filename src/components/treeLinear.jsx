@@ -8,7 +8,6 @@ import { getTree } from '../actions';
 import Match from './match';
 import colorSwitch from './colorSwitch';
 import LinearLoader from './Loading/linear-loader';
-import PotionLoader from './Loading/potion-loader';
 
 const TreeLinear = ({ getTree, tree, isTreeLoading }) => {
   const checkLoading = isTreeLoading;
