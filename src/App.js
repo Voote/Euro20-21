@@ -13,7 +13,7 @@ const App = () => (
         <Nav />
       </nav>
       <header>
-        <h1>Euro 20/21 fixtures</h1>
+        <h1>Euro 20/21 results</h1>
       </header>
       <Switch>
         <Route path="/group">
@@ -21,7 +21,7 @@ const App = () => (
             <Group />
           </section>
         </Route>
-        <Route path="/fixtures">
+        <Route path="/">
           <section>
             <Fixtures />
           </section>

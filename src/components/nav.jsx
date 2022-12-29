@@ -6,7 +6,7 @@ import labels from '../assets/labels';
 const Nav = () => (
   <div className="navigation">
     <Card>
-      <Link to="/fixtures">
+      <Link to="/">
         <Button variant="warning">{labels.Fixtures}</Button>
       </Link>
       <Link to="group">
