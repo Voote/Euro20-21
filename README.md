@@ -9,6 +9,7 @@
 |![Mobile Fixtures Top view](IMG/../public/IMG/screenshots/MobileFixturesTop.png)|
 |:--:|
 |*Fixtures top*|
+
 |![Mobile Fixtures Middle view](IMG/../public/IMG/screenshots/MobileFixturesMiddle.png)|
 |:--:|
 |*Fixtures*|
@@ -16,6 +17,7 @@
 |![Mobile Groups Top view](IMG/../public/IMG/screenshots/MobileGroupsTop.png)|
 |:--:|
 |*Groups top*|
+
 |![Mobile Groups Middle view](IMG/../public/IMG/screenshots/MobileGroupsMiddle.png)|
 |:--:|
 |*Groups*|
@@ -25,6 +27,7 @@
 |![Desktop Fixtures Top view](IMG/../public/IMG/screenshots/DesktopFixturesTop.png)|
 |:--:|
 |*Fixtures top*|
+
 |![Desktop Fixtures Middle view](IMG/../public/IMG/Screenshots/DesktopFixturesMiddle.png)|
 |:--:|
 |*Fixtures*|
@@ -32,6 +35,7 @@
 |![Desktop Groups Top view](IMG/../public/IMG/screenshots/DesktopGroupsTop.png)|
 |:--:|
 |*Groups top*|
+
 |![Desktop Groups Middle view](IMG/../public/IMG/screenshots/DesktopFixturesMiddle.png)|
 |:--:|
 |*Groups*|
